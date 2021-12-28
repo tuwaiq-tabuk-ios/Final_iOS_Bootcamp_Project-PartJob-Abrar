@@ -10,9 +10,11 @@ import UIKit
 class JobTableViewCell: UITableViewCell {
   
   // MARK: - IBOutlets
+  
+
   @IBOutlet weak var JobNameLabel: UILabel!
   @IBOutlet weak var JobTimeLabel: UILabel!
-  @IBOutlet weak var JobSallryLabel: UILabel!
+  @IBOutlet weak var JobOfferLabel: UILabel!
   
   @IBOutlet weak var JobImage: UIImageView!
   

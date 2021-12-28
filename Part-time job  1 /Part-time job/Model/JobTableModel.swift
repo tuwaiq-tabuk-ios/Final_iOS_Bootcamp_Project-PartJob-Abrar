@@ -11,9 +11,9 @@ import UIKit
 struct JobTableModel {
   var jobName : String
   var jobTime : String
-  var jobSallary : String
+  var jobOffer : String
   var image : UIImage? = nil
   
-  var details: String? = nil
+  var jobDetails: String? = nil
   
 }

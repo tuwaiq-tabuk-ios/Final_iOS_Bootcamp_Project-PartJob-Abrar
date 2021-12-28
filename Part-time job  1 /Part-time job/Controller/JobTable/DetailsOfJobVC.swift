@@ -22,7 +22,7 @@ class DetailsOfJobVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     jobImageView.image = jobTableViewCell.image
-    jobDetailLabel.text = jobTableViewCell.details
+    jobDetailLabel.text = jobTableViewCell.jobDetails
     jobTitleLabel.text = jobTableViewCell.jobName
     
   }

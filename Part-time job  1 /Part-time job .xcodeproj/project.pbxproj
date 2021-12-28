@@ -22,6 +22,8 @@
 		2511F01E2763FDDF00F01C4E /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F01D2763FDDF00F01C4E /* SettingController.swift */; };
 		2511F0242764B8F200F01C4E /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F0232764B8F200F01C4E /* SettingCell.swift */; };
 		2516981F2778881E00B007C5 /* AddPostTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2516981E2778881E00B007C5 /* AddPostTableVC.swift */; };
+		251698212779F38700B007C5 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251698202779F38700B007C5 /* Spot.swift */; };
+		25169823277A450000B007C5 /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25169822277A450000B007C5 /* Spots.swift */; };
 		251A3F9A2767624400B07E98 /* SignUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251A3F992767624400B07E98 /* SignUPViewController.swift */; };
 		251A3F9C2767627F00B07E98 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251A3F9B2767627F00B07E98 /* LoginViewController.swift */; };
 		251A3FA02767B73400B07E98 /* UtilitiesCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251A3F9F2767B73400B07E98 /* UtilitiesCustom.swift */; };
@@ -63,6 +65,8 @@
 		2511F01D2763FDDF00F01C4E /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		2511F0232764B8F200F01C4E /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		2516981E2778881E00B007C5 /* AddPostTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostTableVC.swift; sourceTree = "<group>"; };
+		251698202779F38700B007C5 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		25169822277A450000B007C5 /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
 		251A3F992767624400B07E98 /* SignUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPViewController.swift; sourceTree = "<group>"; };
 		251A3F9B2767627F00B07E98 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		251A3F9F2767B73400B07E98 /* UtilitiesCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilitiesCustom.swift; sourceTree = "<group>"; };
@@ -136,7 +140,6 @@
 				2511EFF72763E26900F01C4E /* AppDelegate.swift */,
 				2511EFF92763E26900F01C4E /* SceneDelegate.swift */,
 				2564763E2767E9C300F605F0 /* GoogleService-Info.plist */,
-				2511F0052763E26A00F01C4E /* LaunchScreen.storyboard */,
 			);
 			path = "Support files";
 			sourceTree = "<group>";
@@ -151,7 +154,6 @@
 				253599A8276A03AA009BAD47 /* TabBarViewController.swift */,
 				251A3F992767624400B07E98 /* SignUPViewController.swift */,
 				251A3F9B2767627F00B07E98 /* LoginViewController.swift */,
-				2516981B2778813C00B007C5 /* AddPostTable */,
 				2516981727787AB100B007C5 /* Onboarding */,
 				25DAD75E276F404A00507877 /* Profail */,
 				253599AC276A1562009BAD47 /* JobTable */,
@@ -164,7 +166,9 @@
 		2511F0112763E2FE00F01C4E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2516981B2778813C00B007C5 /* AddPostTable */,
 				2511EFFD2763E26900F01C4E /* Main.storyboard */,
+				2511F0052763E26A00F01C4E /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,7 +210,10 @@
 		2516981B2778813C00B007C5 /* AddPostTable */ = {
 			isa = PBXGroup;
 			children = (
+				25DAD75C276F404300507877 /* CustomToolbarVC.swift */,
 				2516981E2778881E00B007C5 /* AddPostTableVC.swift */,
+				251698202779F38700B007C5 /* Spot.swift */,
+				25169822277A450000B007C5 /* Spots.swift */,
 			);
 			path = AddPostTable;
 			sourceTree = "<group>";
@@ -240,7 +247,6 @@
 		25DAD75E276F404A00507877 /* Profail */ = {
 			isa = PBXGroup;
 			children = (
-				25DAD75C276F404300507877 /* CustomToolbarVC.swift */,
 				25C8C378277071DF000C9B4D /* ProfileVC.swift */,
 			);
 			path = Profail;
@@ -406,8 +412,10 @@
 				2516981F2778881E00B007C5 /* AddPostTableVC.swift in Sources */,
 				2511F0172763E33B00F01C4E /* Ext.SetUp.swift in Sources */,
 				253599AE276A16F2009BAD47 /* JobTableViewCell.swift in Sources */,
+				251698212779F38700B007C5 /* Spot.swift in Sources */,
 				253D7FFB2771F54200B6FD56 /* OnboardingCollectionViewCell.swift in Sources */,
 				253599B0276A18AD009BAD47 /* JobeTableViewController.swift in Sources */,
+				25169823277A450000B007C5 /* Spots.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

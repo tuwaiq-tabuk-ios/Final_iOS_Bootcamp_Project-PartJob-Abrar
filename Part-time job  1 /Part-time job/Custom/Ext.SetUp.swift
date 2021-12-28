@@ -120,8 +120,6 @@ extension StartViewController{
                                    titleColor: .white,
                                    cornerRad: 15)
     
-    
-    
   }
   
 }
