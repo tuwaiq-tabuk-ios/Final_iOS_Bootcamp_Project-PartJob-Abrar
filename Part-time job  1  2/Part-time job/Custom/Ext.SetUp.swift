@@ -10,7 +10,7 @@ import UIKit
 extension HomeViewController {
   
   func SetUpHomeViewController(){
-    
+
     // Style the elements
     loginButton.setupButton(title: "Login",
                             sizeOfText: 20,
@@ -23,19 +23,19 @@ extension HomeViewController {
                              wightOfText: .medium,
                              titleColor: .black,
                              cornerRad: 15)
-    
+
     welcomLable.setupLable(titleLabel: "Welcom in my App",
                            backgrounC: .clear,
                            sizeOfText: 30,
                            wightOfText: .medium,
                            alignText: .left)
-    
+
     youHaveAcountLable.setupLable(titleLabel: "Do you have account?",
                                   backgrounC: .clear,
                                   sizeOfText: 17,
                                   wightOfText: .regular,
                                   alignText: .left)
-    
+
   }
   
 }

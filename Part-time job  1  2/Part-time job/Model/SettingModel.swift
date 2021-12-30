@@ -9,7 +9,7 @@ import UIKit
 
 struct SettingModel {
   var title : String
-//  var titelFont : CGFont
+  //  var titelFont : CGFont
   var image : UIImage
   
 }

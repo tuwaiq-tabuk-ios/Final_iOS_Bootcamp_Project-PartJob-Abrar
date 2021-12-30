@@ -10,6 +10,7 @@ import FirebaseAuth
 import Firebase
 import FirebaseFirestore
 
+
 class SignUPViewController: UIViewController {
   
   
@@ -21,6 +22,12 @@ class SignUPViewController: UIViewController {
   
   @IBOutlet weak var signUpButton: UIButton!
   @IBOutlet weak var errorlabel: UILabel!
+  
+  
+  let db = Firestore.firestore()
+  
+  var  skilledPM: SkilledProfessionalsModel!
+  
   
   
   override func viewDidLoad() {
@@ -88,7 +95,6 @@ class SignUPViewController: UIViewController {
           
           // User was created successfully, now store the first name and last name
           let db = Firestore.firestore()
-          
           db.collection("Users").addDocument(data: ["firstname":firstName, "lastname":lastName, "uid": result!.user.uid ]) { (error) in
             
             if error != nil {

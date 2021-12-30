@@ -29,7 +29,7 @@ class OnboardingViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-//    Array
+    //    Array
     slides = [ OnboardingSlide(title: "Work according to your free time",
                                description: "Choose the job opportunities that suit you anytime, anywhere and according to your schedule ",
                                image: #imageLiteral(resourceName: "1") ) ,

@@ -107,7 +107,8 @@ class LogoController: UIViewController {
     UIView.animate(withDuration: 1.5, animations: {
       self.imageView.alpha = 0
       
-    })
+    }
+    )
   }
   
 }

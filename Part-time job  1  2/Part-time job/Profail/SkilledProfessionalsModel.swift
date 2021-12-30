@@ -7,13 +7,13 @@
 
 import UIKit
 
-struct ProfailModel {
+struct SkilledProfessionalsModel {
   
   var userName: String?
-//  var phon: String?
-//  var junder: String?
-//  var skill: String?
-//  var imageProfail: UIImage?
-//
+  var phon: String?
+  var junder: String?
+  var skill: String?
+  var imageProfail: UIImage?
+  
   
 }

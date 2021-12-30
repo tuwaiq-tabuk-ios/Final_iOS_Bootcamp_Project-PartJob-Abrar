@@ -12,13 +12,13 @@ class AddPostTableVC: UIViewController {
   //  MARK: - @IBOutlet
   @IBOutlet weak var addPostTableView: UITableView!
   
-  var spots: Spots!
+//  var spots: Spots!
   
-  
+  var dbb = ["h"]
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    spots = Spots()
+//    spots = Spots()
     
   }
   
@@ -30,9 +30,9 @@ class AddPostTableVC: UIViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "ShowDetail" {
-      let destanation = segue.destination as! CustomToolbarVC
+      let destanation = segue.destination as! JobOfferEditingVC
       let selectedIndexPath = addPostTableView.indexPathForSelectedRow!
-      destanation.spot = spots.spotArray[selectedIndexPath.row]
+//      destanation.spot = spots.spotArray[selectedIndexPath.row]
       
     }
   }
@@ -42,8 +42,8 @@ class AddPostTableVC: UIViewController {
 extension AddPostTableVC: UITableViewDelegate , UITableViewDataSource {
   //Number Of Rows
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return spots.spotArray.count
-    
+    return dbb.count
+//
   }
   // Cell Data
   
@@ -51,8 +51,8 @@ extension AddPostTableVC: UITableViewDelegate , UITableViewDataSource {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! addPostTabelCell
     
-    cell.textLabel?.text = spots.spotArray[indexPath.row].name
-    
+//    cell.textLabel?.text = spots.spotArray[indexPath.row].name
+//
     return cell
   }
   
