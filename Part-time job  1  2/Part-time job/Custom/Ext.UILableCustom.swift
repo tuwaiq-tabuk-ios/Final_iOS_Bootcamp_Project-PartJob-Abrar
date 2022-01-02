@@ -12,14 +12,15 @@ extension UILabel {
                   backgrounC: UIColor,
                   sizeOfText: CGFloat,
                   wightOfText: UIFont.Weight,
-                  alignText: NSTextAlignment)
-  {
+                  alignText: NSTextAlignment) {
     
     text = titleLabel
     backgroundColor = backgrounC
-    font =
-    UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: sizeOfText,
-                                                            weight: wightOfText)
+    
+    font = UIFontMetrics
+      .default
+      .scaledFont(for: UIFont.systemFont(ofSize: sizeOfText,
+                                         weight: wightOfText)
     )
     
     textAlignment = alignText

@@ -133,7 +133,7 @@
 		2511EFF62763E26900F01C4E /* Part-time job */ = {
 			isa = PBXGroup;
 			children = (
-				25DAD75E276F404A00507877 /* Profail */,
+				25DAD75E276F404A00507877 /* Profile */,
 				2511F0112763E2FE00F01C4E /* View */,
 				2511F0122763E33B00F01C4E /* Custom */,
 				2516981827787ADF00B007C5 /* Model */,
@@ -271,13 +271,13 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
-		25DAD75E276F404A00507877 /* Profail */ = {
+		25DAD75E276F404A00507877 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				25C8C37A2770B5EC000C9B4D /* SkilledProfessionalsModel.swift */,
 				25F7125F277DDB8F00F01973 /* Auth */,
 			);
-			path = Profail;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		25F7125F277DDB8F00F01973 /* Auth */ = {
