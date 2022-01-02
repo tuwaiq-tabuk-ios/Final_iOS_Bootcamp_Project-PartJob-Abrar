@@ -49,7 +49,7 @@ extension AddPostTableVC: UITableViewDelegate , UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! addPostTabelCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! AddPostTabelCell
     
 //    cell.textLabel?.text = spots.spotArray[indexPath.row].name
 //

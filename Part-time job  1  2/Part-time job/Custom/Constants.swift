@@ -14,7 +14,7 @@ struct Constants {
     static let tabBarController = "TabBarC" //main Tab Bar
     static let profailController = "ProfileVC" //SkilledProfessionalsModel
     static let navigationController = "JoinNC" // first screen
-    static let  navigationControllerTable = "TableNC" // add Post tabel
+    static let navigationControllerTable = "TableNC" // add Post tabel
     
   }
 }

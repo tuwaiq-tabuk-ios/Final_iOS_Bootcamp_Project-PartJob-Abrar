@@ -7,7 +7,7 @@
 
 import UIKit
 
-class addPostTabelCell: UITableViewCell {
+class AddPostTabelCell: UITableViewCell {
 
 //MARK: - @IBOutlet
   
