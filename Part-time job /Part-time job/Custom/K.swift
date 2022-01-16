@@ -8,7 +8,7 @@
 import UIKit
 
 
-struct Constants {
+struct K {
   
   struct StoryBoard {
     

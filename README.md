@@ -27,5 +27,4 @@ PartJob app bridge the gap between business owners with job requirements and ski
 ## User stories - Skilled professionals
    - A personal account for each user showing his/her data, previous partial works and their evaluations.
    - Consult a list of part-time jobs available and choose the most suitable.
-   - Alerts to users looking for part-time jobs with offers they can work on.
    - Log in, log out and create an account.

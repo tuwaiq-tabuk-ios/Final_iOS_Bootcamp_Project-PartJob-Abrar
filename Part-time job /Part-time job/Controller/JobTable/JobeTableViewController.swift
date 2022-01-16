@@ -102,6 +102,7 @@ class JobeTableViewController: UIViewController , UITableViewDataSource , UITabl
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "JobCell") as! JobTableViewCell
+    
     cell.JobNameLabel.text = JobeTableArr[indexPath.row].jobName
     cell.JobTimeLabel.text = JobeTableArr[indexPath.row].jobTime
     cell.JobOfferLabel.text = JobeTableArr[indexPath.row].jobOffer
@@ -109,10 +110,13 @@ class JobeTableViewController: UIViewController , UITableViewDataSource , UITabl
     
     return cell
   }
+  
+  
   func tableView(_ tableView: UITableView,
                  didSelectRowAt indexPath: IndexPath) {
     
     let jobTable = JobeTableArr[indexPath.row]
+    
     let vc = storyboard?.instantiateViewController(withIdentifier: "DetailsVC")
     as? DetailsOfJobVC
     

@@ -14,7 +14,6 @@ class UploadigJobDetailsVC: UIViewController,PHPickerViewControllerDelegate,UICo
   
   
   //MARK: - Properties
-  
   var pictures = [UIImage]()
   var currentIndex = 0
   
@@ -25,12 +24,8 @@ class UploadigJobDetailsVC: UIViewController,PHPickerViewControllerDelegate,UICo
   var cityNameArr = ["Abha","Tabuk","Jeddah","Seoul"]
   
   
-  
-  
   //MARK: - @IBOutlets
   @IBOutlet weak var photosCollection: UICollectionView!
-  
-  
   @IBOutlet weak var kindOfJobTextField: UITextField!
   @IBOutlet weak var selectCityNameTF: UITextField!
   
@@ -95,10 +90,6 @@ class UploadigJobDetailsVC: UIViewController,PHPickerViewControllerDelegate,UICo
     }
     
     var imageURL = [String]()
-    
-    print("\n\n ---------------- \(#file) - \(#function)")
-    print(" - currentUserAuth: \(String(describing: currentUserAuth))")
-    
     for image in imagesData {
       imageID = UUID().uuidString
       print(" - imageID: \(imageID))")
@@ -128,7 +119,6 @@ class UploadigJobDetailsVC: UIViewController,PHPickerViewControllerDelegate,UICo
               "images":imageURL,
             ]],merge: true, completion: { error in
               guard error == nil else {
-                print("-- error Fir: \(error?.localizedDescription)")
                 return
               }
               print("-- Data Upload")
@@ -142,8 +132,18 @@ class UploadigJobDetailsVC: UIViewController,PHPickerViewControllerDelegate,UICo
   
   
   @IBAction func logOutPressed(_ sender: Any) {
-    
-    
+
+    do {
+        try Auth.auth().signOut()
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HVC") as? UIViewController {
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
+
+    } catch{
+        print("ERROR in signout",error.localizedDescription)
+    }
+
     
   }
   
@@ -232,7 +232,7 @@ class UploadigJobDetailsVC: UIViewController,PHPickerViewControllerDelegate,UICo
     }
     
     
-//    return typeOfJobArray[row]
+
   }
   
   
@@ -248,10 +248,7 @@ class UploadigJobDetailsVC: UIViewController,PHPickerViewControllerDelegate,UICo
     default:
       return
     }
-
-//    currentIndex = row
-//    selectJobType.text = typeOfJobArray[row]
-  }
+ }
   
  
   

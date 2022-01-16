@@ -53,7 +53,7 @@ class BOLoginVC: UIViewController {
       }
       else {
         
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: Constants.StoryBoard.navigationControllerTable) as! UINavigationController
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: K.StoryBoard.navigationControllerTable) as! UINavigationController
         
         controller.modalPresentationStyle = .fullScreen
         controller.modalTransitionStyle = .flipHorizontal

@@ -19,6 +19,10 @@ class DetailsOfJobVC: UIViewController {
   
   
   
+  
+  
+  //MARK: - View controller life cycle
+
   override func viewDidLoad() {
     super.viewDidLoad()
     

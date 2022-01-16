@@ -15,7 +15,6 @@ class JobTableViewCell: UITableViewCell {
   @IBOutlet weak var JobNameLabel: UILabel!
   @IBOutlet weak var JobTimeLabel: UILabel!
   @IBOutlet weak var JobOfferLabel: UILabel!
-  
   @IBOutlet weak var JobImage: UIImageView!
   
   

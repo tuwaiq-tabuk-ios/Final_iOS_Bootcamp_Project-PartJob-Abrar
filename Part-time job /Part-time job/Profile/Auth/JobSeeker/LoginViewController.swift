@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
       }
       else {
         
-        let tabBarController = self.storyboard?.instantiateViewController(identifier: Constants.StoryBoard.tabBarController) as? TabBarViewController
+        let tabBarController = self.storyboard?.instantiateViewController(identifier: K.StoryBoard.tabBarController) as? TabBarViewController
         
         self.view.window?.rootViewController = tabBarController
         self.view.window?.makeKeyAndVisible()

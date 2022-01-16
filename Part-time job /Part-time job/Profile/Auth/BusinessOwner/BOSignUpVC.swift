@@ -16,7 +16,7 @@ class BOSignUpVC: UIViewController {
   @IBOutlet weak var firstNameTextFiled: UITextField!
   @IBOutlet weak var lastNameTextFiled: UITextField!
   @IBOutlet weak var emaileTextFiled: UITextField!
-  @IBOutlet weak var passwordTextFiled: UITextField!
+  @IBOutlet weak var passwordTextFiled: MainTF!
   
   @IBOutlet weak var signUpButton: UIButton!
   @IBOutlet weak var errorlabel: UILabel!
@@ -121,7 +121,7 @@ class BOSignUpVC: UIViewController {
   }
   
   func transitionToHome() {
-    let controller = storyboard?.instantiateViewController(withIdentifier: Constants.StoryBoard.navigationControllerTable) as! UINavigationController
+    let controller = storyboard?.instantiateViewController(withIdentifier: K.StoryBoard.navigationControllerTable) as! UINavigationController
     
     controller.modalPresentationStyle = .fullScreen
     controller.modalTransitionStyle = .flipHorizontal
