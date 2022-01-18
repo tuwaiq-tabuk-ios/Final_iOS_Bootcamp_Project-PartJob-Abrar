@@ -1,6 +1,0 @@
-framework module Pods_Part_time_job {
-  umbrella header "Pods-Part-time job-umbrella.h"
-
-  export *
-  module * { export * }
-}
