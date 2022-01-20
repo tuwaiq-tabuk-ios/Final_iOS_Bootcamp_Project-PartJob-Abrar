@@ -17,7 +17,7 @@ class ProfileForEmployee: UIViewController {
   //  MARK: - @IBOutlet
   private let nameHeader: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .systemGray
+    lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Your Name"
@@ -27,7 +27,7 @@ class ProfileForEmployee: UIViewController {
   
   private let nameLabel: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .jobActionColors
+    lbl.textColor = .jobText
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = ""
@@ -36,7 +36,7 @@ class ProfileForEmployee: UIViewController {
   
   private let emailHeader: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .systemGray
+    lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Your Email"
@@ -46,7 +46,7 @@ class ProfileForEmployee: UIViewController {
   
   private let emailLabel: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .jobActionColors
+    lbl.textColor = .jobText
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = ""
@@ -56,7 +56,7 @@ class ProfileForEmployee: UIViewController {
   
   private let ageHeader: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .systemGray
+    lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Your Age"
@@ -66,7 +66,7 @@ class ProfileForEmployee: UIViewController {
   
   private let ageLabel: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .jobActionColors
+    lbl.textColor = .jobText
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = ""
@@ -75,7 +75,7 @@ class ProfileForEmployee: UIViewController {
   
   private let degreeHeader: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .systemGray
+    lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Your Degree"
@@ -85,7 +85,7 @@ class ProfileForEmployee: UIViewController {
   
   private let degreeLabel: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .jobActionColors
+    lbl.textColor = .jobText
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = ""
@@ -94,7 +94,7 @@ class ProfileForEmployee: UIViewController {
   
   private let experienceHeader: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .systemGray
+    lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Your Experience"
@@ -104,7 +104,7 @@ class ProfileForEmployee: UIViewController {
   
   private let experienceLabel: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .jobActionColors
+    lbl.textColor = .jobText
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = ""
@@ -115,16 +115,17 @@ class ProfileForEmployee: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Profile"
-    view.backgroundColor    = .jobBackgroundColor
+    view.backgroundColor = .jobBackgroundColor
     navigationItem.largeTitleDisplayMode = .never
     setupViews()
+    
     let editButton = UIButton(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
-    editButton.setImage(UIImage(systemName: "highlighter")!.withTintColor(.gray).withRenderingMode(.alwaysOriginal), for: .normal)
+    editButton.setImage(UIImage(systemName: "highlighter")!.withTintColor(.jobActionColors!).withRenderingMode(.alwaysOriginal), for: .normal)
     editButton.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
     
     
     let logoutButton = UIButton(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
-    logoutButton.setImage(UIImage(systemName: "rectangle.portrait.and.arrow.right.fill")!.withTintColor(.systemRed).withRenderingMode(.alwaysOriginal), for: .normal)
+    logoutButton.setImage(UIImage(systemName: "rectangle.portrait.and.arrow.right.fill")!.withTintColor(.jobActionColors!).withRenderingMode(.alwaysOriginal), for: .normal)
     logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
     self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: logoutButton), UIBarButtonItem(customView: editButton)]
     

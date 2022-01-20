@@ -24,7 +24,7 @@ class AddJobVC: UIViewController {
   let imageTitle: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
-    lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+    lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Company Image"
     return lbl
@@ -46,7 +46,7 @@ class AddJobVC: UIViewController {
   private let nameOfCompanyHeaderLabel: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
-    lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+    lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Company Name"
     return lbl
@@ -63,7 +63,7 @@ class AddJobVC: UIViewController {
   private let jobTitleHeaderLabel: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
-    lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+    lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Job Title"
     return lbl
@@ -80,7 +80,7 @@ class AddJobVC: UIViewController {
   private let cityHeaderLabel: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
-    lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+    lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "City"
     return lbl
@@ -97,7 +97,7 @@ class AddJobVC: UIViewController {
   private let durationHeaderLabel: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
-    lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+    lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Duration"
     return lbl
@@ -131,7 +131,7 @@ class AddJobVC: UIViewController {
   private let locationHeaderLabel: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
-    lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+    lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Location"
     return lbl
@@ -148,7 +148,7 @@ class AddJobVC: UIViewController {
   private let descriptionHeaderLabel: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
-    lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+    lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Description For Job"
     return lbl
@@ -337,6 +337,7 @@ class AddJobVC: UIViewController {
       addButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
       addButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
       addButton.heightAnchor.constraint(equalToConstant: 45),
+      
     ])
   }
   
@@ -433,12 +434,9 @@ extension AddJobVC {
     
     if companyName.isEmpty || job.isEmpty || city.isEmpty || duration.isEmpty || salary.isEmpty || location.isEmpty{
       
-      
       let alert = UIAlertController(title: "Error", message: "please fill out all the required fields", preferredStyle: .alert)
       alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
       self.present(alert, animated: true, completion: nil)
-      
-      
       
     }else{
       

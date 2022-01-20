@@ -13,7 +13,7 @@ extension UITextField {
     autocorrectionType = .no
     layer.cornerRadius = 2
     layer.borderWidth = 1.1
-    layer.borderColor = UIColor.jobActionColors?.cgColor
+    layer.borderColor = UIColor(named: "offWhite")?.cgColor
     clipsToBounds = true
     leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 0))
     leftViewMode = .always

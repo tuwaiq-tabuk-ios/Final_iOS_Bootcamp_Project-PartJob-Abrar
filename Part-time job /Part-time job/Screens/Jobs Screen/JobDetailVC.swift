@@ -45,7 +45,7 @@ class JobDetailVC: UIViewController {
   
   private let nameOfCompanyLabel: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .jobActionColors
+    lbl.textColor = .jobText
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = ""
@@ -117,7 +117,7 @@ class JobDetailVC: UIViewController {
   
   private let salaryLabel: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .black.withAlphaComponent(0.57)
+    lbl.textColor = .jobText
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = ""

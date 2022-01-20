@@ -16,7 +16,7 @@ class EditVC: UIViewController {
   //  MARK: - @IBOutlet
   private let nameHeader: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .black.withAlphaComponent(0.57)
+    lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Your name"
@@ -25,14 +25,14 @@ class EditVC: UIViewController {
   
   private let nameTF: UITextField = {
     let textField = UITextField()
-    textField.setupTextField(with:  NSAttributedString(string: "Ex: Abrar",
-                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.5)]))
+    textField.setupTextField(with: NSAttributedString(string: "Ex: Abrar",
+                                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.jobText!.withAlphaComponent(0.5)]))
     return textField
   }()
   
   private let degreeHeader: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .black.withAlphaComponent(0.57)
+    lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Your degree"
@@ -41,13 +41,13 @@ class EditVC: UIViewController {
   private let degreeTF: UITextField = {
     let textField = UITextField()
     textField.setupTextField(with:  NSAttributedString(string: "Ex: Bachelor in Computer Engineering",
-                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.5)]))
+                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.jobText!.withAlphaComponent(0.5)]))
     return textField
   }()
   
   private let ageHeader: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .black.withAlphaComponent(0.57)
+    lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Your age"
@@ -57,13 +57,13 @@ class EditVC: UIViewController {
   private let ageTF: UITextField = {
     let textField = UITextField()
     textField.setupTextField(with:  NSAttributedString(string: "Ex: 26 years old",
-                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.5)]))
+                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.jobText!.withAlphaComponent(0.5)]))
     return textField
   }()
   
   private let experienceHeader: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .black.withAlphaComponent(0.57)
+    lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Your experience"
@@ -73,7 +73,7 @@ class EditVC: UIViewController {
   private let experienceTF: UITextField = {
     let textField = UITextField()
     textField.setupTextField(with:  NSAttributedString(string: "Ex: 2~ years",
-                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.5)]))
+                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.jobText!.withAlphaComponent(0.5)]))
     return textField
   }()
   
@@ -81,7 +81,7 @@ class EditVC: UIViewController {
   
   private let done: UIButton = {
     let btn = UIButton(type: .system)
-    btn.setImage(UIImage(systemName: "paperplane.fill")!.withTintColor(.gray).withRenderingMode(.alwaysOriginal), for: .normal)
+    btn.setImage(UIImage(systemName: "paperplane.fill")!.withTintColor(.jobActionColors!).withRenderingMode(.alwaysOriginal), for: .normal)
     btn.addTarget(self, action: #selector(doneTapped), for: .touchUpInside)
     btn.translatesAutoresizingMaskIntoConstraints = false
     return btn
