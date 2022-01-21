@@ -14,7 +14,7 @@ extension UIButton {
     backgroundColor = .jobActionColors
     setTitle(title, for: .normal)
     setTitleColor(.white, for: .normal)
-    layer.cornerRadius = 15
+    layer.cornerRadius = 10
     clipsToBounds = true
     translatesAutoresizingMaskIntoConstraints = false
   }

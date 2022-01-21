@@ -91,8 +91,8 @@ class MainVC: UIViewController {
       
       createAdButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
       createAdButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0),
-      createAdButton.widthAnchor.constraint(equalToConstant: 90),
-      createAdButton.heightAnchor.constraint(equalToConstant: 30),
+      createAdButton.widthAnchor.constraint(equalToConstant: 100),
+      createAdButton.heightAnchor.constraint(equalToConstant: 40),
       
     ])
   }

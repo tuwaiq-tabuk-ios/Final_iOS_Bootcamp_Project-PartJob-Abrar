@@ -51,33 +51,28 @@ class OnboardingVC: UIViewController {
   @IBAction func nextBtnPressed(_ sender: UIButton) {
     
     if currentPage == slides.count - 1 {
-  
+      
       transitionToLoginVC()
-  
+      
     }
     else {
       currentPage += 1
       let indexPath = IndexPath(item:currentPage, section: 0)
       collictionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-  
+      
     }
     
   }
   
-    func transitionToLoginVC() {
-      let controller = self.storyboard?.instantiateViewController(withIdentifier: K.StoryBoard.loginScreen) as! UINavigationController
+  func transitionToLoginVC() {
+    let controller = self.storyboard?.instantiateViewController(withIdentifier: K.StoryBoard.loginScreen) as! UINavigationController
 
-      controller.modalPresentationStyle = .fullScreen
-      controller.modalTransitionStyle = .flipHorizontal
-      self.present(controller, animated: true, completion: nil)
-
+    view.window?.rootViewController = controller
+    view.window?.makeKeyAndVisible()
+    
     
   }
 }
-
-
-
-
 
 // MARK: - UICollectionView Data Source
 

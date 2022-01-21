@@ -125,7 +125,7 @@ class ProfileForEmployee: UIViewController {
     
     
     let logoutButton = UIButton(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
-    logoutButton.setImage(UIImage(systemName: "rectangle.portrait.and.arrow.right.fill")!.withTintColor(.jobActionColors!).withRenderingMode(.alwaysOriginal), for: .normal)
+    logoutButton.setImage(UIImage(systemName: "rectangle.portrait.and.arrow.right.fill")!.withTintColor(.systemRed.withAlphaComponent(0.57)).withRenderingMode(.alwaysOriginal), for: .normal)
     logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
     self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: logoutButton), UIBarButtonItem(customView: editButton)]
     

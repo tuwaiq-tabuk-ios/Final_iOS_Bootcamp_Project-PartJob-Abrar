@@ -35,7 +35,7 @@ class ProfileForEmployer: UIViewController {
   
   private let nameHeader: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .systemGray
+    lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Your Name"
@@ -45,7 +45,7 @@ class ProfileForEmployer: UIViewController {
   
   private let nameLabel: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .jobActionColors
+    lbl.textColor = .jobText
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = ""
@@ -54,7 +54,7 @@ class ProfileForEmployer: UIViewController {
   
   private let emailHeader: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .systemGray
+    lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Your Email"
@@ -64,7 +64,7 @@ class ProfileForEmployer: UIViewController {
   
   private let emailLabel: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .jobActionColors
+    lbl.textColor = .jobText
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = ""
@@ -74,7 +74,7 @@ class ProfileForEmployer: UIViewController {
   
   private let applicantsHeader: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .systemGray
+    lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     lbl.text = "Applicants: "
@@ -92,7 +92,7 @@ class ProfileForEmployer: UIViewController {
     
     //    logout
     let logoutButton = UIButton(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
-    logoutButton.setImage(UIImage(systemName: "rectangle.portrait.and.arrow.right.fill")!.withTintColor(.systemRed).withRenderingMode(.alwaysOriginal), for: .normal)
+    logoutButton.setImage(UIImage(systemName: "rectangle.portrait.and.arrow.right.fill")!.withTintColor(.systemRed.withAlphaComponent(0.57)).withRenderingMode(.alwaysOriginal), for: .normal)
     logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: logoutButton)
     
@@ -225,6 +225,7 @@ class ProfileForEmployer: UIViewController {
           
           
         }
+        
         DispatchQueue.main.async {
           self.tableView.reloadData()
         }
@@ -358,6 +359,8 @@ extension ProfileForEmployer: UICollectionViewDataSource, UICollectionViewDelega
     self.deleteData(for: self.jobs[indexPath.row].docID)
     self.jobs.remove(at: indexPath.row)
   }
+  
+  
   private func deleteData(for document: String) {
     db.collection("Jobs").document(document).delete { err in
       
@@ -408,7 +411,7 @@ extension ProfileForEmployer: UICollectionViewDataSource, UICollectionViewDelega
         
         for document in querySnapshot!.documents{
           let data = document.data()
-          
+
           self.jobs.append(
             Job(imageURL: data["imageURL"] as? String ?? "NA",
                 companyName: data["companyName"] as? String ?? "NA",
