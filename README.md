@@ -19,12 +19,18 @@ PartJob app bridge the gap between business owners with job requirements and ski
    - Establishments who have a shortage of workers for a certain time or during busy times at work and do not want to pay the costs of training and contract with the employee.
    - People who are looking for a job without a long contract.
 
-## User stories - Business ownners
+## User stories - Employer
    - Specify the part-time job they offer, the duration of the job, and the amount of money they will pay.
    - Log in, log out and create an account.
+   - Delete job offer.
+   - See applicants on their job offer.
 
 
-## User stories - Skilled professionals
+## User stories - Empolyee
    - A personal account for each user showing his/her data, previous partial works and their evaluations.
    - Consult a list of part-time jobs available and choose the most suitable.
    - Log in, log out and create an account.
+
+
+
+/Users/abraralqarni/Downloads/Simulator Screen Recording - iPhone 12 - 2022-01-20 at 15.29.16.MP4
