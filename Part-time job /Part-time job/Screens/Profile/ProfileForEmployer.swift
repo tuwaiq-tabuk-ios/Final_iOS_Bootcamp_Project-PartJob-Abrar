@@ -141,9 +141,9 @@ class ProfileForEmployer: UIViewController {
   
   //Alert
   @objc private func logout() {
-    let alert = UIAlertController(title: "Log out", message: "Your sure you want to log out?",
+    let alert = UIAlertController(title: "Log out".Localized, message: "Your sure you want to log out?".Localized,
                                   preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "LOG OUT", style: .destructive,
+    alert.addAction(UIAlertAction(title: "LOG OUT".Localized, style: .destructive,
                                   handler: { _ in
       do {
         try Auth.auth().signOut()
