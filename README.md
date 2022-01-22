@@ -36,6 +36,7 @@ PartJob app bridge the gap between business owners with job requirements and ski
 ## Demo
 ![](DarkMoodArabicRecording.gif)
 ![](LightEnglishRecording.gif)
-![](PartJobRecording)
+![](PartJobRecordingArabic.gif)
+![](PartJobRecordingEnglish.gif)
 
 
