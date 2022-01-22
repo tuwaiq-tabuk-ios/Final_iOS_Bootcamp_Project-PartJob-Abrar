@@ -237,7 +237,7 @@ extension MainVC: UICollectionViewDataSource, UICollectionViewDelegate {
     self.navigationController?.pushViewController(vc, animated: true)
   }
   
-  
+  //MARK: - FireStore
   private func readImageFromFirestore(with url: String, completion: @escaping (UIImage)-> ()){
 
     if  url != "NA" {

@@ -22,6 +22,8 @@ class EmployerProfileCell: UITableViewCell {
     
     return lbl
   }()
+  
+  
   let email: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobText!
@@ -29,6 +31,8 @@ class EmployerProfileCell: UITableViewCell {
     lbl.translatesAutoresizingMaskIntoConstraints = false
     return lbl
   }()
+  
+  
   let age: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobText!
@@ -36,6 +40,8 @@ class EmployerProfileCell: UITableViewCell {
     lbl.translatesAutoresizingMaskIntoConstraints = false
     return lbl
   }()
+  
+  
   let degree: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobText!
@@ -43,6 +49,8 @@ class EmployerProfileCell: UITableViewCell {
     lbl.translatesAutoresizingMaskIntoConstraints = false
     return lbl
   }()
+  
+  
   let experience: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobText!
@@ -51,12 +59,14 @@ class EmployerProfileCell: UITableViewCell {
     return lbl
   }()
   
-  //  MARK: -
+  //  MARK: - Table Cell
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     setupViews()
   }
+  
+  
   //enable objects
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -79,6 +89,7 @@ class EmployerProfileCell: UITableViewCell {
     addSubview(degree)
     addSubview(experience)
     
+    // elements constraints
     NSLayoutConstraint.activate([
       
       name.topAnchor.constraint(equalTo: topAnchor, constant: 10),

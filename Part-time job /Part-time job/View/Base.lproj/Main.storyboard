@@ -378,8 +378,8 @@
                                                         <constraint firstAttribute="height" constant="447" id="32U-Sr-dEw"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ld2-in-8TM">
-                                                    <rect key="frame" x="0.0" y="556" width="373" height="73.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ld2-in-8TM">
+                                                    <rect key="frame" x="16" y="592.5" width="373" height="73.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpK-FZ-LMk">
                                                             <rect key="frame" x="0.0" y="0.0" width="373" height="37"/>
@@ -432,7 +432,7 @@
                                 <color key="backgroundColor" name="Color-3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="loV-dE-odw"/>
-                                    <constraint firstAttribute="width" constant="150" id="qip-yv-cz0"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="qip-yv-cz0"/>
                                 </constraints>
                                 <state key="normal" title="Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -497,22 +497,22 @@
     </scenes>
     <designables>
         <designable name="0nw-rw-Yhq">
-            <size key="intrinsicContentSize" width="73" height="21"/>
+            <size key="intrinsicContentSize" width="86" height="34"/>
         </designable>
         <designable name="Vwq-0m-vSJ">
-            <size key="intrinsicContentSize" width="118.5" height="21"/>
+            <size key="intrinsicContentSize" width="101.5" height="34"/>
         </designable>
         <designable name="Xww-Wl-bEy">
-            <size key="intrinsicContentSize" width="118.5" height="21"/>
+            <size key="intrinsicContentSize" width="101.5" height="34"/>
         </designable>
         <designable name="j7O-a5-Edf">
-            <size key="intrinsicContentSize" width="73" height="21"/>
+            <size key="intrinsicContentSize" width="86" height="34"/>
         </designable>
         <designable name="lwq-75-jJQ">
-            <size key="intrinsicContentSize" width="184" height="21"/>
+            <size key="intrinsicContentSize" width="167" height="34"/>
         </designable>
         <designable name="owL-1K-ncj">
-            <size key="intrinsicContentSize" width="60" height="21"/>
+            <size key="intrinsicContentSize" width="73" height="34"/>
         </designable>
     </designables>
     <resources>

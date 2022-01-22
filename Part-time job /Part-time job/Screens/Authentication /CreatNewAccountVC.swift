@@ -65,7 +65,7 @@ class CreatNewAccountVC: UIViewController {
     createNewUser()
   }
   
-  
+  //MARK: - Action Handlers
   @objc private func createNewUser() {
     guard let email = emailTF.text else {return}
     guard let password = passwordTF.text else {return}
@@ -89,7 +89,7 @@ class CreatNewAccountVC: UIViewController {
     }
   }
   
-  
+  //MARK: - FireStore
   func createNewUserUsing(email: String, password: String, name: String) {
     Auth.auth().createUser(withEmail: email, password: password) { results, error in
       
@@ -149,7 +149,7 @@ class CreatNewAccountVC: UIViewController {
     view.window?.makeKeyAndVisible()
     present(homeViewController, animated: true, completion: nil)
   }
-  
+  //Segmented Control
   @objc private func categoryValueChanged(_ sender: UISegmentedControl) {
     switch sender.selectedSegmentIndex {
     case 0:
@@ -161,7 +161,7 @@ class CreatNewAccountVC: UIViewController {
     }
   }
 }
-
+//update object's
 extension CreatNewAccountVC: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     nameTF.resignFirstResponder()

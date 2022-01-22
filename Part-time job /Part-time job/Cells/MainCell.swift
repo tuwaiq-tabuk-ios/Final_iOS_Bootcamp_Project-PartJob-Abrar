@@ -25,6 +25,7 @@ class MainCell: UICollectionViewCell {
     return lbl
   }()
   
+  
   private let companyForJob: UILabel = {
     let lbl = UILabel()
     lbl.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 11, weight: .bold))
@@ -36,6 +37,7 @@ class MainCell: UICollectionViewCell {
     return lbl
   }()
   
+  
   private let descriptionForJob: UILabel = {
     let lbl = UILabel()
     lbl.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 16, weight: .regular))
@@ -46,6 +48,8 @@ class MainCell: UICollectionViewCell {
     lbl.translatesAutoresizingMaskIntoConstraints = false
     return lbl
   }()
+  
+  
   let imageForJob: UIImageView = {
     let img = UIImageView()
     img.contentMode = .scaleAspectFill
@@ -81,8 +85,8 @@ class MainCell: UICollectionViewCell {
     addSubview(titleForJob)
     addSubview(descriptionForJob)
     
+    // elements constraints
     NSLayoutConstraint.activate([
-      
       
       imageForJob.topAnchor.constraint(equalTo: topAnchor, constant: 0),
       imageForJob.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),

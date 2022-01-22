@@ -34,6 +34,7 @@ class ProfileForEmployee: UIViewController {
     return lbl
   }()
   
+  
   private let emailHeader: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors
@@ -54,6 +55,7 @@ class ProfileForEmployee: UIViewController {
     return lbl
   }()
   
+  
   private let ageHeader: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors
@@ -72,6 +74,7 @@ class ProfileForEmployee: UIViewController {
     lbl.text = ""
     return lbl
   }()
+  
   
   private let degreeHeader: UILabel = {
     let lbl = UILabel()
@@ -92,6 +95,7 @@ class ProfileForEmployee: UIViewController {
     return lbl
   }()
   
+  
   private let experienceHeader: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors
@@ -110,6 +114,7 @@ class ProfileForEmployee: UIViewController {
     lbl.text = ""
     return lbl
   }()
+  
   
   //  MARK: - View controller life cycle
   override func viewDidLoad() {
@@ -132,7 +137,6 @@ class ProfileForEmployee: UIViewController {
     
   }
   
-  
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
@@ -145,7 +149,7 @@ class ProfileForEmployee: UIViewController {
     self.present(sheetViewController, animated: true, completion: nil)
   }
   
-  //Alert
+  //MARK: - Action Handlers
   @objc private func logout() {
     let alert = UIAlertController(title: "Log out".Localized, message: "Your sure you want to log out?".Localized,
                                   preferredStyle: .alert)
@@ -171,7 +175,7 @@ class ProfileForEmployee: UIViewController {
       }
     
   
-  
+  //MARK: - FireStore
   func getUserData() {
     guard let user = Auth.auth().currentUser else {return}
     
@@ -224,7 +228,7 @@ class ProfileForEmployee: UIViewController {
     view.addSubview(experienceHeader)
     view.addSubview(experienceLabel)
     
-    
+    // elements constraints
     NSLayoutConstraint.activate([
       
       nameHeader.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),

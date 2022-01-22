@@ -252,9 +252,10 @@ class AddJobVC: UIViewController {
     salaryTF.delegate = self
     locationTF.delegate = self
     descriptionTV.delegate = self
-    
+
     AddOfferJobButtonPressed.addTarget(self, action: #selector(createNewJob), for: .touchUpInside)
     
+     //elements constraints
     NSLayoutConstraint.activate([
       
       imageTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
@@ -431,7 +432,7 @@ extension AddJobVC {
           let description = descriptionTV.text
     else {return}
     
-    
+    //MARK: - Action Handlers
     if companyName.isEmpty || job.isEmpty || city.isEmpty || duration.isEmpty || salary.isEmpty || location.isEmpty{
       
       let alert = UIAlertController(title: "Error".Localized, message: "please fill out all the required fields".Localized, preferredStyle: .alert)
@@ -473,7 +474,7 @@ extension AddJobVC {
   }
 }
 
-
+//update object's
 extension AddJobVC: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     

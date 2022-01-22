@@ -23,12 +23,14 @@ class EditEmployeeProfileVC: UIViewController {
     return lbl
   }()
   
+  
   private let nameTF: UITextField = {
     let textField = UITextField()
     textField.setupTextField(with: NSAttributedString(string: "Ex: Abrar".Localized,
                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.jobText!.withAlphaComponent(0.5)]))
     return textField
   }()
+  
   
   private let degreeHeader: UILabel = {
     let lbl = UILabel()
@@ -38,12 +40,15 @@ class EditEmployeeProfileVC: UIViewController {
     lbl.text = "Your Degree: ".Localized
     return lbl
   }()
+  
+  
   private let degreeTF: UITextField = {
     let textField = UITextField()
     textField.setupTextField(with:  NSAttributedString(string: "Ex: Bachelor in Computer Engineering".Localized,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.jobText!.withAlphaComponent(0.5)]))
     return textField
   }()
+  
   
   private let ageHeader: UILabel = {
     let lbl = UILabel()
@@ -54,12 +59,14 @@ class EditEmployeeProfileVC: UIViewController {
     return lbl
   }()
   
+  
   private let ageTF: UITextField = {
     let textField = UITextField()
     textField.setupTextField(with:  NSAttributedString(string: "Ex: 26 years old".Localized,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.jobText!.withAlphaComponent(0.5)]))
     return textField
   }()
+  
   
   private let experienceHeader: UILabel = {
     let lbl = UILabel()
@@ -77,7 +84,7 @@ class EditEmployeeProfileVC: UIViewController {
     return textField
   }()
   
-  ///Buttun
+
   
   private let done: UIButton = {
     let btn = UIButton(type: .system)
@@ -131,8 +138,8 @@ class EditEmployeeProfileVC: UIViewController {
     degreeTF.delegate = self
     ageTF.delegate = self
     
+    // elements constraints
     NSLayoutConstraint.activate([
-      
       
       done.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
       done.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
@@ -178,6 +185,7 @@ class EditEmployeeProfileVC: UIViewController {
     ])
   }
   
+  
   @objc private func doneTapped() {
     guard let user = Auth.auth().currentUser else {return}
     
@@ -203,7 +211,7 @@ class EditEmployeeProfileVC: UIViewController {
   }
 }
 
-
+//update object's
 extension EditEmployeeProfileVC: UITextFieldDelegate {
   func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
     nameTF.resignFirstResponder()

@@ -27,11 +27,9 @@ class LoginVC: UIViewController {
     self.dismissKeyboard()
     passwordTF.isSecureTextEntry = true
     navigationItem.backButtonTitle = ""
-    //localiz()
+    
     
   }
-  
-
   
   
   override func viewDidAppear(_ animated: Bool) {
@@ -46,11 +44,6 @@ class LoginVC: UIViewController {
   private func isUserIsSignedIn() -> Bool {
     return Auth.auth().currentUser != nil
   }
-  
-  
-  
-  
-  
   
   
   //MARK: - Action Handlers
@@ -97,7 +90,8 @@ class LoginVC: UIViewController {
           self.present(alert, animated: true)
           
         }
-      }else{
+      } else {
+        //MARK: - FireStore
         guard let user = results?.user else {return}
         
         self.db.collection("Users").document(user.uid).setData([
@@ -135,7 +129,7 @@ class LoginVC: UIViewController {
   }
 }
 
-
+//update object's
 extension LoginVC: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     emailTF.resignFirstResponder()

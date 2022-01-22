@@ -24,6 +24,7 @@ class EmployerCollectionProfileCell: UICollectionViewCell {
     return lbl
   }()
   
+  
   private let companyForJob: UILabel = {
     let lbl = UILabel()
     lbl.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 11, weight: .bold))
@@ -35,6 +36,7 @@ class EmployerCollectionProfileCell: UICollectionViewCell {
     return lbl
   }()
   
+  
   private let descriptionForJob: UILabel = {
     let lbl = UILabel()
     lbl.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 16, weight: .regular))
@@ -45,6 +47,7 @@ class EmployerCollectionProfileCell: UICollectionViewCell {
     lbl.translatesAutoresizingMaskIntoConstraints = false
     return lbl
   }()
+  
   
   private let deleteLabel: UILabel = {
     let lbl = UILabel()
@@ -59,6 +62,7 @@ class EmployerCollectionProfileCell: UICollectionViewCell {
     lbl.clipsToBounds = true
     return lbl
   }()
+  
   
   let imageForJob: UIImageView = {
     let img = UIImageView()
@@ -96,7 +100,7 @@ class EmployerCollectionProfileCell: UICollectionViewCell {
     addSubview(descriptionForJob)
     addSubview(deleteLabel)
     
-    
+    // elements constraints
     NSLayoutConstraint.activate([
   
       imageForJob.topAnchor.constraint(equalTo: topAnchor, constant: 0),

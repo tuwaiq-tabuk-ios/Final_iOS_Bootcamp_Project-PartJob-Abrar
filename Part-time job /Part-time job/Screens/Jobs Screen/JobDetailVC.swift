@@ -69,7 +69,7 @@ class JobDetailVC: UIViewController {
     lbl.text = ""
     return lbl
   }()
- 
+  
   private let cityHeaderLabel: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors
@@ -105,7 +105,7 @@ class JobDetailVC: UIViewController {
     lbl.text = ""
     return lbl
   }()
- 
+  
   private let salaryHeaderLabel: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors
@@ -123,7 +123,7 @@ class JobDetailVC: UIViewController {
     lbl.text = ""
     return lbl
   }()
- 
+  
   private let locationHeaderLabel: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors
@@ -196,7 +196,7 @@ class JobDetailVC: UIViewController {
     }
   }
   
-  
+  //FireStore
   private func isUserEmployer(completion: @escaping (_ isEmployer: String) -> ()){
     guard let user = Auth.auth().currentUser else {return}
     db.collection("Users").whereField("userID", isEqualTo: user.uid)
@@ -218,7 +218,7 @@ class JobDetailVC: UIViewController {
       }
   }
   
-  
+  //ScrollView
   private func setupScrollView(){
     scrollView.isScrollEnabled = true
     scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -267,7 +267,7 @@ class JobDetailVC: UIViewController {
     view.addSubview(applyButton)
     
     
-    
+    // elements constraints
     NSLayoutConstraint.activate([
       
       imageTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
@@ -355,7 +355,7 @@ class JobDetailVC: UIViewController {
   }
   
   
-  //MARK: - Data
+  //MARK: - FireStore
   
   @objc private func applyForAJobTapped() {
     

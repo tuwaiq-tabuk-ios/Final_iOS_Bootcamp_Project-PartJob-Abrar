@@ -104,6 +104,8 @@ class ProfileForEmployer: UIViewController {
     getCurrentUserInfo()
     
   }
+  
+  
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+605)
@@ -136,7 +138,6 @@ class ProfileForEmployer: UIViewController {
     scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
     scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     
-    
   }
   
   //Alert
@@ -158,7 +159,7 @@ class ProfileForEmployer: UIViewController {
 
     }))
 
-    alert.addAction(UIAlertAction(title: "CANCEL", style: .cancel, handler: nil))
+    alert.addAction(UIAlertAction(title: "CANCEL".Localized, style: .cancel, handler: nil))
     self.present(alert, animated: true, completion: nil)
     
   
@@ -194,7 +195,7 @@ class ProfileForEmployer: UIViewController {
     }
   }
   
-  
+  //MARK: - FireStore
   private func getUsersData() {
     guard let user = Auth.auth().currentUser else {return}
     
@@ -210,10 +211,12 @@ class ProfileForEmployer: UIViewController {
                                 degree: "",
                                 experience: "")
           )
+          
           DispatchQueue.main.async {
             self.tableView.reloadData()
           }
         }
+        
         for doc in sn!.documents {
           let data = doc.data()
           
@@ -229,11 +232,8 @@ class ProfileForEmployer: UIViewController {
         DispatchQueue.main.async {
           self.tableView.reloadData()
         }
-        
       }
-      
     }
-    
   }
   
   
@@ -253,17 +253,14 @@ class ProfileForEmployer: UIViewController {
           email = data["email"] as? String ?? "No email available"
           
         }
+        
         DispatchQueue.main.async {
-          
           self.nameLabel.text = name
           self.emailLabel.text = email
           
-          
         }
       }
-      
     }
-    
   }
   
   
@@ -362,7 +359,7 @@ extension ProfileForEmployer: UICollectionViewDataSource, UICollectionViewDelega
     self.jobs.remove(at: indexPath.row)
   }
   
-  
+  //MARK: - FireStore delete
   private func deleteData(for document: String) {
     db.collection("Jobs").document(document).delete { err in
       
@@ -379,7 +376,7 @@ extension ProfileForEmployer: UICollectionViewDataSource, UICollectionViewDelega
     }
   }
   
-  
+  //MARK: - FireStore Image
   private func readImageFromFirestore(with url: String, completion: @escaping (UIImage)-> ()) {
     if  url != "NA" {
       
@@ -400,7 +397,7 @@ extension ProfileForEmployer: UICollectionViewDataSource, UICollectionViewDelega
     }
   }
   
-  
+  //MARK: - FireStore
   private func getJobAdvertisements(){
     guard let user = Auth.auth().currentUser else {return}
     db.collection("Jobs").whereField("userID", isEqualTo: user.uid).getDocuments { (querySnapshot, error) in
