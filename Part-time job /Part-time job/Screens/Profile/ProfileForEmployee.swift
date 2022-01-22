@@ -154,22 +154,22 @@ class ProfileForEmployee: UIViewController {
       do {
         try Auth.auth().signOut()
         self.dismiss(animated: true, completion:nil)
-        
+
       }
       catch let signOutError {
         let alert = UIAlertController(title: "Error".Localized, message: signOutError.localizedDescription,
                                       preferredStyle: UIAlertController.Style.alert)
         self.present(alert, animated: true, completion: nil)
       }
-      
+
     }))
-    
+
     alert.addAction(UIAlertAction(title: "CANCEL".Localized, style: .cancel, handler: nil))
     self.present(alert, animated: true, completion: nil)
+
+   
+      }
     
-  }
-  
-  
   
   
   func getUserData() {

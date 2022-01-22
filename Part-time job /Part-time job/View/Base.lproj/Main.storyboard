@@ -497,22 +497,22 @@
     </scenes>
     <designables>
         <designable name="0nw-rw-Yhq">
-            <size key="intrinsicContentSize" width="86" height="34"/>
+            <size key="intrinsicContentSize" width="73" height="21"/>
         </designable>
         <designable name="Vwq-0m-vSJ">
-            <size key="intrinsicContentSize" width="101.5" height="34"/>
+            <size key="intrinsicContentSize" width="118.5" height="21"/>
         </designable>
         <designable name="Xww-Wl-bEy">
-            <size key="intrinsicContentSize" width="101.5" height="34"/>
+            <size key="intrinsicContentSize" width="118.5" height="21"/>
         </designable>
         <designable name="j7O-a5-Edf">
-            <size key="intrinsicContentSize" width="86" height="34"/>
+            <size key="intrinsicContentSize" width="73" height="21"/>
         </designable>
         <designable name="lwq-75-jJQ">
-            <size key="intrinsicContentSize" width="167" height="34"/>
+            <size key="intrinsicContentSize" width="184" height="21"/>
         </designable>
         <designable name="owL-1K-ncj">
-            <size key="intrinsicContentSize" width="73" height="34"/>
+            <size key="intrinsicContentSize" width="60" height="21"/>
         </designable>
     </designables>
     <resources>

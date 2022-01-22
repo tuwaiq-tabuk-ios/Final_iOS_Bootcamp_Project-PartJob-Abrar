@@ -148,19 +148,20 @@ class ProfileForEmployer: UIViewController {
       do {
         try Auth.auth().signOut()
         self.dismiss(animated: true, completion:nil)
-        
+
       }
       catch let signOutError {
         let alert = UIAlertController(title: "Error".Localized, message: signOutError.localizedDescription,
                                       preferredStyle: UIAlertController.Style.alert)
         self.present(alert, animated: true, completion: nil)
       }
-      
+
     }))
-    
+
     alert.addAction(UIAlertAction(title: "CANCEL", style: .cancel, handler: nil))
     self.present(alert, animated: true, completion: nil)
     
+  
   }
   
   //  constraints
@@ -222,7 +223,6 @@ class ProfileForEmployer: UIViewController {
                                 degree: data["degree"] as? String ?? "No degree available",
                                 experience: data["experience"] as? String ?? "No experience available")
           )
-          
           
         }
         
@@ -349,6 +349,8 @@ extension ProfileForEmployer: UICollectionViewDataSource, UICollectionViewDelega
     cell.backgroundColor = .blue
     return cell
   }
+  
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return jobs.count
   }
@@ -411,7 +413,7 @@ extension ProfileForEmployer: UICollectionViewDataSource, UICollectionViewDelega
         
         for document in querySnapshot!.documents{
           let data = document.data()
-
+          
           self.jobs.append(
             Job(imageURL: data["imageURL"] as? String ?? "NA",
                 companyName: data["companyName"] as? String ?? "NA",

@@ -125,7 +125,6 @@ class LoginVC: UIViewController {
     
   }
   
-  
   func transitionToHome() {
     let controller = self.storyboard?.instantiateViewController(withIdentifier: K.StoryBoard.mainNCScreen) as! UINavigationController
     
