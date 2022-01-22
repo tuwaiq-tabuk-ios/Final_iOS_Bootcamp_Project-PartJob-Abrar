@@ -22,7 +22,8 @@ class MainVC: UIViewController {
   
   private let createAdButton: UIButton = {
     let btn = UIButton(type: .system)
-    btn.setupButton(with: "Create Job")
+    btn.setupButton(with: "Add Job Offer".Localized)
+    
     btn.isHidden = true
     btn.addTarget(self, action: #selector(createJobTapped), for: .touchUpInside)
     return btn
@@ -89,9 +90,9 @@ class MainVC: UIViewController {
     
     NSLayoutConstraint.activate([
       
-      createAdButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+      createAdButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 3),
       createAdButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0),
-      createAdButton.widthAnchor.constraint(equalToConstant: 100),
+      createAdButton.widthAnchor.constraint(equalToConstant: 150),
       createAdButton.heightAnchor.constraint(equalToConstant: 40),
       
     ])

@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class EditVC: UIViewController {
+class EditEmployeeProfileVC: UIViewController {
   
   //  MARK: - Properties
   private let db = Firestore.firestore()
@@ -19,13 +19,13 @@ class EditVC: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Your name"
+    lbl.text = "Your Name: ".Localized
     return lbl
   }()
   
   private let nameTF: UITextField = {
     let textField = UITextField()
-    textField.setupTextField(with: NSAttributedString(string: "Ex: Abrar",
+    textField.setupTextField(with: NSAttributedString(string: "Ex: Abrar".Localized,
                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.jobText!.withAlphaComponent(0.5)]))
     return textField
   }()
@@ -35,12 +35,12 @@ class EditVC: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Your degree"
+    lbl.text = "Your Degree: ".Localized
     return lbl
   }()
   private let degreeTF: UITextField = {
     let textField = UITextField()
-    textField.setupTextField(with:  NSAttributedString(string: "Ex: Bachelor in Computer Engineering",
+    textField.setupTextField(with:  NSAttributedString(string: "Ex: Bachelor in Computer Engineering".Localized,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.jobText!.withAlphaComponent(0.5)]))
     return textField
   }()
@@ -50,13 +50,13 @@ class EditVC: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Your age"
+    lbl.text = "Your Age: ".Localized
     return lbl
   }()
   
   private let ageTF: UITextField = {
     let textField = UITextField()
-    textField.setupTextField(with:  NSAttributedString(string: "Ex: 26 years old",
+    textField.setupTextField(with:  NSAttributedString(string: "Ex: 26 years old".Localized,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.jobText!.withAlphaComponent(0.5)]))
     return textField
   }()
@@ -66,13 +66,13 @@ class EditVC: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Your experience"
+    lbl.text = "Your Experience: ".Localized
     return lbl
   }()
   
   private let experienceTF: UITextField = {
     let textField = UITextField()
-    textField.setupTextField(with:  NSAttributedString(string: "Ex: 2~ years",
+    textField.setupTextField(with:  NSAttributedString(string: "Ex: 2~ years".Localized,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.jobText!.withAlphaComponent(0.5)]))
     return textField
   }()
@@ -188,8 +188,8 @@ class EditVC: UIViewController {
     else {return}
     
     if name.isEmpty || age.isEmpty || exp.isEmpty || degree.isEmpty || age.isEmpty {
-      let alert = UIAlertController(title: "Error", message: "please fill out all the required fields", preferredStyle: .alert)
-      alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+      let alert = UIAlertController(title: "Error".Localized, message: "please fill out all the required fields".Localized, preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "OK".Localized, style: .cancel, handler: nil))
       self.present(alert, animated: true, completion: nil)
     }else{
       self.db.collection("Users").document(user.uid).updateData([
@@ -204,7 +204,7 @@ class EditVC: UIViewController {
 }
 
 
-extension EditVC: UITextFieldDelegate {
+extension EditEmployeeProfileVC: UITextFieldDelegate {
   func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
     nameTF.resignFirstResponder()
     ageTF.resignFirstResponder()

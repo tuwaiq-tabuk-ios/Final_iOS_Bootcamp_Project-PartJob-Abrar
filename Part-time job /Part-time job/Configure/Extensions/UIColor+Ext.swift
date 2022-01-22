@@ -12,7 +12,6 @@ extension UIColor {
   
   static let jobBackgroundColor = UIColor(named: "Color-5")
   static let jobActionColors = UIColor(named: "Color-3")
-  static let jobCellColor = UIColor(named: "Color-5")
   static let jobText = UIColor(named: "Text")
   
   

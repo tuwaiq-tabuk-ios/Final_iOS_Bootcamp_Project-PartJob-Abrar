@@ -14,7 +14,7 @@ class CreatNewAccountVC: UIViewController {
   //MARK: - Properties
   
   let db = Firestore.firestore()
-  let categorySegmentedControl = UISegmentedControl (items: ["Employee","Employer"])
+  let categorySegmentedControl = UISegmentedControl (items: ["Employee".Localized,"Employer".Localized])
   var categoryValue = "no"
   
   
@@ -34,6 +34,8 @@ class CreatNewAccountVC: UIViewController {
     confirmePasswordTF.isSecureTextEntry = true
     navigationController?.navigationBar.barTintColor = UIColor.jobActionColors
     setupUserInterface()
+    
+
     
   }
   
@@ -74,15 +76,15 @@ class CreatNewAccountVC: UIViewController {
       if passwordTF.text == confirmePasswordTF.text {
         createNewUserUsing(email: email, password: password, name: name)
       } else{
-        let alert = UIAlertController(title: "Oops!", message: "Passwords don't Match", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        let alert = UIAlertController(title: "Oops!".Localized, message: "Passwords don't Match".Localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK".Localized, style: .cancel, handler: nil))
         present(alert, animated: true)
         
       }
     }
     else{
-      let alert = UIAlertController(title: "Oops!", message: "please make sure name, email, password and confirm password  are not empty.", preferredStyle: .alert)
-      alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+      let alert = UIAlertController(title: "Oops!".Localized, message: "please make sure name, email, password and confirm password  are not empty.".Localized, preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "OK".Localized, style: .cancel, handler: nil))
       present(alert, animated: true)
     }
   }
@@ -95,30 +97,30 @@ class CreatNewAccountVC: UIViewController {
         switch AuthErrorCode(rawValue: error.code) {
         case .emailAlreadyInUse:
           
-          let alert = UIAlertController(title: "Oops!", message: "email Already in use", preferredStyle: .alert)
-          alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+          let alert = UIAlertController(title: "Oops!".Localized, message: "email Already in use".Localized, preferredStyle: .alert)
+          alert.addAction(UIAlertAction(title: "OK".Localized, style: .cancel, handler: nil))
           self.present(alert, animated: true)
           
         case .invalidEmail:
           
-          let alert = UIAlertController(title: "Oops!", message: "are sure you typed the email correctly?", preferredStyle: .alert)
-          alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+          let alert = UIAlertController(title: "Oops!".Localized, message: "are sure you typed the email correctly?".Localized, preferredStyle: .alert)
+          alert.addAction(UIAlertAction(title: "OK".Localized, style: .cancel, handler: nil))
           self.present(alert, animated: true)
           
         case .weakPassword:
           
-          let alert = UIAlertController(title: "Oops!", message: "Your password is weak, please make sure it's strong.", preferredStyle: .alert)
-          alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+          let alert = UIAlertController(title: "Oops!".Localized, message: "Your password is weak, please make sure it's strong.".Localized, preferredStyle: .alert)
+          alert.addAction(UIAlertAction(title: "OK".Localized, style: .cancel, handler: nil))
           self.present(alert, animated: true)
           
         default:
           
-          let alert = UIAlertController(title: "Oops!", message: "\(error.localizedDescription)", preferredStyle: .alert)
-          alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+          let alert = UIAlertController(title: "Oops!".Localized, message: "\(error.localizedDescription)", preferredStyle: .alert)
+          alert.addAction(UIAlertAction(title: "OK".Localized, style: .cancel, handler: nil))
           self.present(alert, animated: true)
           
         }
-      }else{
+      } else{
         guard let user = results?.user else {return}
         
         self.db.collection("Users").document(user.uid).setData([

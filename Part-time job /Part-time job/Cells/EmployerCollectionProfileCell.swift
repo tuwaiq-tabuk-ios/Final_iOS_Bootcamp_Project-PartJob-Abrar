@@ -45,6 +45,7 @@ class EmployerCollectionProfileCell: UICollectionViewCell {
     lbl.translatesAutoresizingMaskIntoConstraints = false
     return lbl
   }()
+  
   private let deleteLabel: UILabel = {
     let lbl = UILabel()
     lbl.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 26, weight: .bold))
@@ -53,11 +54,12 @@ class EmployerCollectionProfileCell: UICollectionViewCell {
     lbl.textAlignment = .center
     lbl.textColor = .white
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "DELETE"
+    lbl.text = "DELETE OFFER".Localized
     lbl.layer.cornerRadius = 5
     lbl.clipsToBounds = true
     return lbl
   }()
+  
   let imageForJob: UIImageView = {
     let img = UIImageView()
     img.contentMode = .scaleAspectFill
@@ -65,6 +67,8 @@ class EmployerCollectionProfileCell: UICollectionViewCell {
     img.translatesAutoresizingMaskIntoConstraints = false
     return img
   }()
+  
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
     configureCell()
@@ -77,7 +81,7 @@ class EmployerCollectionProfileCell: UICollectionViewCell {
   
   
   private func configureCell() {
-    backgroundColor = .jobCellColor
+    backgroundColor = .jobBackgroundColor
     layer.cornerRadius = 5
     clipsToBounds = true
     layer.cornerCurve = .continuous
@@ -91,9 +95,10 @@ class EmployerCollectionProfileCell: UICollectionViewCell {
     addSubview(titleForJob)
     addSubview(descriptionForJob)
     addSubview(deleteLabel)
+    
+    
     NSLayoutConstraint.activate([
-      
-      
+  
       imageForJob.topAnchor.constraint(equalTo: topAnchor, constant: 0),
       imageForJob.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
       imageForJob.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),

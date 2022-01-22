@@ -38,7 +38,7 @@ class ProfileForEmployer: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Your Name"
+    lbl.text = "Your Name: ".Localized
     return lbl
   }()
   
@@ -57,7 +57,7 @@ class ProfileForEmployer: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Your Email"
+    lbl.text = "Your Email: ".Localized
     return lbl
   }()
   
@@ -75,10 +75,10 @@ class ProfileForEmployer: UIViewController {
   private let applicantsHeader: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors
-    lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+    lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Applicants: "
-    lbl.textAlignment = .left
+    lbl.text = "Applicants: ".Localized
+    lbl.textAlignment = .center
     return lbl
   }()
   
@@ -86,7 +86,7 @@ class ProfileForEmployer: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "Profile"
+    title = "Profile".Localized
     view.backgroundColor = .jobBackgroundColor
     navigationItem.largeTitleDisplayMode = .never
     
@@ -151,7 +151,7 @@ class ProfileForEmployer: UIViewController {
         
       }
       catch let signOutError {
-        let alert = UIAlertController(title: "Error", message: signOutError.localizedDescription,
+        let alert = UIAlertController(title: "Error".Localized, message: signOutError.localizedDescription,
                                       preferredStyle: UIAlertController.Style.alert)
         self.present(alert, animated: true, completion: nil)
       }

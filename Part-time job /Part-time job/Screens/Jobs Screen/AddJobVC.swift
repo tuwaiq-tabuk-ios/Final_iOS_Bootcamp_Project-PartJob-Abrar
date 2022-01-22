@@ -26,7 +26,7 @@ class AddJobVC: UIViewController {
     lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Company Image"
+    lbl.text = "Company Image".Localized
     return lbl
   }()
   
@@ -48,14 +48,14 @@ class AddJobVC: UIViewController {
     lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Company Name"
+    lbl.text = "Company Name".Localized
     return lbl
   }()
   
   
   private let nameOfCompanyTF: UITextField = {
     let textField = UITextField()
-    textField.setupTextField(with:  NSAttributedString(string: "Ex: RiyadhBank",
+    textField.setupTextField(with:  NSAttributedString(string: "Ex: RiyadhBank".Localized,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.5)]))
     return textField
   }()
@@ -65,14 +65,14 @@ class AddJobVC: UIViewController {
     lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Job Title"
+    lbl.text = "Job Title".Localized
     return lbl
   }()
   
   
   private let jobTitleTF: UITextField = {
     let textField = UITextField()
-    textField.setupTextField(with:NSAttributedString(string: "Ex: iOS Engineer",
+    textField.setupTextField(with:NSAttributedString(string: "Ex: iOS Engineer".Localized,
                                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.5)]))
     return textField
   }()
@@ -82,14 +82,14 @@ class AddJobVC: UIViewController {
     lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "City"
+    lbl.text = "City".Localized
     return lbl
   }()
   
   
   private let cityTF: UITextField = {
     let textField = UITextField()
-    textField.setupTextField(with:  NSAttributedString(string: "Ex: Riyadh",
+    textField.setupTextField(with:NSAttributedString(string: "Ex: Riyadh".Localized,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.5)]))
     return textField
   }()
@@ -99,14 +99,14 @@ class AddJobVC: UIViewController {
     lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Duration"
+    lbl.text = "Duration".Localized
     return lbl
   }()
   
   
   private let durationTF: UITextField = {
     let textField = UITextField()
-    textField.setupTextField(with:  NSAttributedString(string: "Ex: 1-Month or 1-Year",
+    textField.setupTextField(with:NSAttributedString(string: "Ex: 1-Month or 1-Year".Localized,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.5)]))
     return textField
   }()
@@ -116,14 +116,14 @@ class AddJobVC: UIViewController {
     lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Salary"
+    lbl.text = "Salary".Localized
     return lbl
   }()
   
   
   private let salaryTF: UITextField = {
     let textField = UITextField()
-    textField.setupTextField(with:  NSAttributedString(string: "Ex: 10,000 SAR",
+    textField.setupTextField(with:NSAttributedString(string:"Ex: 10,000 SAR".Localized,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.5)]))
     return textField
   }()
@@ -133,14 +133,14 @@ class AddJobVC: UIViewController {
     lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Location"
+    lbl.text = "Location".Localized
     return lbl
   }()
   
   
   private let locationTF: UITextField = {
     let textField = UITextField()
-    textField.setupTextField(with:  NSAttributedString(string: "Ex: Street name, Road name",
+    textField.setupTextField(with:NSAttributedString(string: "Ex: Street name, Road name".Localized,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.5)]))
     return textField
   }()
@@ -150,7 +150,7 @@ class AddJobVC: UIViewController {
     lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Description For Job"
+    lbl.text = "Description For Job".Localized
     return lbl
   }()
   
@@ -162,9 +162,9 @@ class AddJobVC: UIViewController {
   }()
   
   //MARK: -
-  private let addButton: UIButton = {
+  private let AddOfferJobButtonPressed: UIButton = {
     let btn = UIButton(type: .system)
-    btn.setupButton(with: "Create a new job")
+    btn.setupButton(with: "Add Offer Job".Localized)
     return btn
   }()
   
@@ -172,7 +172,7 @@ class AddJobVC: UIViewController {
   //  MARK: - View controller life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "Create a job"
+    title = "Add Offer Job".Localized
     view.backgroundColor = .jobBackgroundColor
     self.dismissKeyboard()
     setupScrollView()
@@ -241,7 +241,7 @@ class AddJobVC: UIViewController {
     scrollView.addSubview(locationTF)
     scrollView.addSubview(descriptionHeaderLabel)
     scrollView.addSubview(descriptionTV)
-    scrollView.addSubview(addButton)
+    scrollView.addSubview(AddOfferJobButtonPressed)
     
     descriptionTV.delegate = self
     
@@ -253,7 +253,7 @@ class AddJobVC: UIViewController {
     locationTF.delegate = self
     descriptionTV.delegate = self
     
-    addButton.addTarget(self, action: #selector(createNewJob), for: .touchUpInside)
+    AddOfferJobButtonPressed.addTarget(self, action: #selector(createNewJob), for: .touchUpInside)
     
     NSLayoutConstraint.activate([
       
@@ -333,10 +333,10 @@ class AddJobVC: UIViewController {
       locationTF.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
       locationTF.heightAnchor.constraint(equalToConstant: 45),
       
-      addButton.topAnchor.constraint(equalTo: locationTF.bottomAnchor, constant: 20),
-      addButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-      addButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-      addButton.heightAnchor.constraint(equalToConstant: 45),
+      AddOfferJobButtonPressed.topAnchor.constraint(equalTo: locationTF.bottomAnchor, constant: 20),
+      AddOfferJobButtonPressed.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+      AddOfferJobButtonPressed.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+      AddOfferJobButtonPressed.heightAnchor.constraint(equalToConstant: 45),
       
     ])
   }
@@ -434,8 +434,8 @@ extension AddJobVC {
     
     if companyName.isEmpty || job.isEmpty || city.isEmpty || duration.isEmpty || salary.isEmpty || location.isEmpty{
       
-      let alert = UIAlertController(title: "Error", message: "please fill out all the required fields", preferredStyle: .alert)
-      alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+      let alert = UIAlertController(title: "Error".Localized, message: "please fill out all the required fields".Localized, preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "OK".Localized, style: .cancel, handler: nil))
       self.present(alert, animated: true, completion: nil)
       
     }else{
@@ -462,8 +462,8 @@ extension AddJobVC {
           }
         }
       }else{
-        let alert = UIAlertController(title: "Error", message: "You need to add an image for the current job offer.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        let alert = UIAlertController(title: "Error".Localized, message: "You need to add an image for the current job offer.".Localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK".Localized, style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
       }
       

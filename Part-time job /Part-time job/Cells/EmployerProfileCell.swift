@@ -16,7 +16,7 @@ class EmployerProfileCell: UITableViewCell {
   //  MARK: - @IBOutlet
   let name: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
+    lbl.textColor = .jobText!
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     
@@ -24,28 +24,28 @@ class EmployerProfileCell: UITableViewCell {
   }()
   let email: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
+    lbl.textColor = .jobText!
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     return lbl
   }()
   let age: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
+    lbl.textColor = .jobText!
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     return lbl
   }()
   let degree: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
+    lbl.textColor = .jobText!
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     return lbl
   }()
   let experience: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
+    lbl.textColor = .jobText!
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     return lbl

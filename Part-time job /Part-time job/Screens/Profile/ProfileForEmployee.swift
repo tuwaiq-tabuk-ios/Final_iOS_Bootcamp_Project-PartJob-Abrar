@@ -20,7 +20,7 @@ class ProfileForEmployee: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Your Name"
+    lbl.text = "Your Name: ".Localized
     return lbl
   }()
   
@@ -39,7 +39,7 @@ class ProfileForEmployee: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Your Email"
+    lbl.text = "Your Email: ".Localized
     return lbl
   }()
   
@@ -59,7 +59,7 @@ class ProfileForEmployee: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Your Age"
+    lbl.text = "Your Age: ".Localized
     return lbl
   }()
   
@@ -78,7 +78,7 @@ class ProfileForEmployee: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Your Degree"
+    lbl.text = "Your Degree: ".Localized
     return lbl
   }()
   
@@ -97,7 +97,7 @@ class ProfileForEmployee: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Your Experience"
+    lbl.text = "Your Experience: ".Localized
     return lbl
   }()
   
@@ -114,7 +114,7 @@ class ProfileForEmployee: UIViewController {
   //  MARK: - View controller life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "Profile"
+    title = "Profile".Localized
     view.backgroundColor = .jobBackgroundColor
     navigationItem.largeTitleDisplayMode = .never
     setupViews()
@@ -141,30 +141,35 @@ class ProfileForEmployee: UIViewController {
   
   //MARK: -
   @objc private func editButtonTapped() {
-    let sheetViewController = EditVC()
+    let sheetViewController = EditEmployeeProfileVC()
     self.present(sheetViewController, animated: true, completion: nil)
   }
   
-  
+  //Alert
   @objc private func logout() {
-    let alert = UIAlertController(title: "Log out", message: "Your sure you want to log out?", preferredStyle: .alert)
-    
-    alert.addAction(UIAlertAction(title: "LOG OUT", style: .destructive, handler: { _ in
+    let alert = UIAlertController(title: "Log out".Localized, message: "Your sure you want to log out?".Localized,
+                                  preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "LOG OUT".Localized, style: .destructive,
+                                  handler: { _ in
       do {
         try Auth.auth().signOut()
         self.dismiss(animated: true, completion:nil)
         
       }
       catch let signOutError {
-        let alert = UIAlertController(title: "Error", message: signOutError.localizedDescription,
+        let alert = UIAlertController(title: "Error".Localized, message: signOutError.localizedDescription,
                                       preferredStyle: UIAlertController.Style.alert)
         self.present(alert, animated: true, completion: nil)
       }
+      
     }))
-    alert.addAction(UIAlertAction(title: "CANCEL", style: .cancel, handler: nil))
     
+    alert.addAction(UIAlertAction(title: "CANCEL".Localized, style: .cancel, handler: nil))
     self.present(alert, animated: true, completion: nil)
+    
   }
+  
+  
   
   
   func getUserData() {

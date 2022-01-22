@@ -15,7 +15,5 @@ struct K {
     static let mainNCScreen = "HomeVC" //MainNC
     static let loginScreen = "LoginNC" //Login Screen
     static let k = "CreatNewAccountVC" //Login Screen
-   
-   
   }
 }
