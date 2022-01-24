@@ -9,7 +9,6 @@ import UIKit
 
 
 extension UIButton {
-  
   open func setupButton(with title: String) {
     backgroundColor = .jobActionColors
     setTitle(title, for: .normal)

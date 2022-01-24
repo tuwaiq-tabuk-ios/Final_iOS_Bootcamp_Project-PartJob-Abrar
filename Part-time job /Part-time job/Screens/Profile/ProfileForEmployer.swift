@@ -38,7 +38,7 @@ class ProfileForEmployer: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Your Name"
+    lbl.text = "Your Name: ".Localized
     return lbl
   }()
   
@@ -57,7 +57,7 @@ class ProfileForEmployer: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Your Email"
+    lbl.text = "Your Email: ".Localized
     return lbl
   }()
   
@@ -75,10 +75,10 @@ class ProfileForEmployer: UIViewController {
   private let applicantsHeader: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors
-    lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+    lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Applicants: "
-    lbl.textAlignment = .left
+    lbl.text = "Applicants: ".Localized
+    lbl.textAlignment = .center
     return lbl
   }()
   
@@ -86,7 +86,7 @@ class ProfileForEmployer: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "Profile"
+    title = "Profile".Localized
     view.backgroundColor = .jobBackgroundColor
     navigationItem.largeTitleDisplayMode = .never
     
@@ -104,6 +104,8 @@ class ProfileForEmployer: UIViewController {
     getCurrentUserInfo()
     
   }
+  
+  
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+605)
@@ -136,31 +138,31 @@ class ProfileForEmployer: UIViewController {
     scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
     scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     
-    
   }
   
   //Alert
   @objc private func logout() {
-    let alert = UIAlertController(title: "Log out", message: "Your sure you want to log out?",
+    let alert = UIAlertController(title: "Log out".Localized, message: "Your sure you want to log out?".Localized,
                                   preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "LOG OUT", style: .destructive,
+    alert.addAction(UIAlertAction(title: "LOG OUT".Localized, style: .destructive,
                                   handler: { _ in
       do {
         try Auth.auth().signOut()
         self.dismiss(animated: true, completion:nil)
-        
+
       }
       catch let signOutError {
-        let alert = UIAlertController(title: "Error", message: signOutError.localizedDescription,
+        let alert = UIAlertController(title: "Error".Localized, message: signOutError.localizedDescription,
                                       preferredStyle: UIAlertController.Style.alert)
         self.present(alert, animated: true, completion: nil)
       }
-      
+
     }))
-    
-    alert.addAction(UIAlertAction(title: "CANCEL", style: .cancel, handler: nil))
+
+    alert.addAction(UIAlertAction(title: "CANCEL".Localized, style: .cancel, handler: nil))
     self.present(alert, animated: true, completion: nil)
     
+  
   }
   
   //  constraints
@@ -193,7 +195,7 @@ class ProfileForEmployer: UIViewController {
     }
   }
   
-  
+  //MARK: - FireStore
   private func getUsersData() {
     guard let user = Auth.auth().currentUser else {return}
     
@@ -209,10 +211,12 @@ class ProfileForEmployer: UIViewController {
                                 degree: "",
                                 experience: "")
           )
+          
           DispatchQueue.main.async {
             self.tableView.reloadData()
           }
         }
+        
         for doc in sn!.documents {
           let data = doc.data()
           
@@ -223,17 +227,13 @@ class ProfileForEmployer: UIViewController {
                                 experience: data["experience"] as? String ?? "No experience available")
           )
           
-          
         }
         
         DispatchQueue.main.async {
           self.tableView.reloadData()
         }
-        
       }
-      
     }
-    
   }
   
   
@@ -253,17 +253,14 @@ class ProfileForEmployer: UIViewController {
           email = data["email"] as? String ?? "No email available"
           
         }
+        
         DispatchQueue.main.async {
-          
           self.nameLabel.text = name
           self.emailLabel.text = email
           
-          
         }
       }
-      
     }
-    
   }
   
   
@@ -349,6 +346,8 @@ extension ProfileForEmployer: UICollectionViewDataSource, UICollectionViewDelega
     cell.backgroundColor = .blue
     return cell
   }
+  
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return jobs.count
   }
@@ -360,7 +359,7 @@ extension ProfileForEmployer: UICollectionViewDataSource, UICollectionViewDelega
     self.jobs.remove(at: indexPath.row)
   }
   
-  
+  //MARK: - FireStore delete
   private func deleteData(for document: String) {
     db.collection("Jobs").document(document).delete { err in
       
@@ -377,7 +376,7 @@ extension ProfileForEmployer: UICollectionViewDataSource, UICollectionViewDelega
     }
   }
   
-  
+  //MARK: - FireStore Image
   private func readImageFromFirestore(with url: String, completion: @escaping (UIImage)-> ()) {
     if  url != "NA" {
       
@@ -398,7 +397,7 @@ extension ProfileForEmployer: UICollectionViewDataSource, UICollectionViewDelega
     }
   }
   
-  
+  //MARK: - FireStore
   private func getJobAdvertisements(){
     guard let user = Auth.auth().currentUser else {return}
     db.collection("Jobs").whereField("userID", isEqualTo: user.uid).getDocuments { (querySnapshot, error) in
@@ -411,7 +410,7 @@ extension ProfileForEmployer: UICollectionViewDataSource, UICollectionViewDelega
         
         for document in querySnapshot!.documents{
           let data = document.data()
-
+          
           self.jobs.append(
             Job(imageURL: data["imageURL"] as? String ?? "NA",
                 companyName: data["companyName"] as? String ?? "NA",

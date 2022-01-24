@@ -19,9 +19,9 @@ class OnboardingVC: UIViewController {
     didSet {
       pageControl.currentPage = currentPage
       if currentPage == slides.count - 1 {
-        nextBtn.setTitle("Get Started", for: .normal)
+        nextBtn.setTitle("Get Started".Localized, for: .normal)
       } else {
-        nextBtn.setTitle("Next", for: .normal)
+        nextBtn.setTitle("Next".Localized, for: .normal)
       }
     }
   }
@@ -30,16 +30,16 @@ class OnboardingVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Array
-    slides = [ OnboardingSlide(title: "Work in your free time",
-                               description: "Choose the job opportunities that suit you anytime, anywhere.",
+    slides = [ OnboardingSlide(title: "Work in your free time".Localized,
+                               description: "Choose the job opportunities that suit you anytime, anywhere.".Localized,
                                image: #imageLiteral(resourceName: "1") ) ,
                
-               OnboardingSlide(title: "Add a job offer ",
-                               description: "You can search for employees of all experiences and skills. ",
+               OnboardingSlide(title: "Add a job offer".Localized,
+                               description: "You can search for employees of all experiences and skills.".Localized,
                                image: #imageLiteral(resourceName: "2")) ,
                
-               OnboardingSlide(title: " Smart recruitment for flexible work" ,
-                               description: "We connect employer with qualified employees on flexible work contracts",
+               OnboardingSlide(title: "Smart recruitment for flexible work".Localized,
+                               description: "We connect employer with qualified employees on flexible work contracts".Localized,
                                image: #imageLiteral(resourceName: "3"))
     ]
     

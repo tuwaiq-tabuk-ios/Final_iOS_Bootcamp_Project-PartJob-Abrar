@@ -22,7 +22,7 @@ class JobDetailVC: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Company Image"
+    lbl.text = "Company Image".Localized
     return lbl
   }()
   
@@ -39,7 +39,7 @@ class JobDetailVC: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Company Name"
+    lbl.text = "Company Name".Localized
     return lbl
   }()
   
@@ -57,7 +57,7 @@ class JobDetailVC: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Job Title"
+    lbl.text = "Job Title".Localized
     return lbl
   }()
   
@@ -69,13 +69,13 @@ class JobDetailVC: UIViewController {
     lbl.text = ""
     return lbl
   }()
- 
+  
   private let cityHeaderLabel: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "City"
+    lbl.text = "City".Localized
     return lbl
   }()
   
@@ -93,7 +93,7 @@ class JobDetailVC: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Duration"
+    lbl.text = "Duration".Localized
     return lbl
   }()
   
@@ -105,13 +105,13 @@ class JobDetailVC: UIViewController {
     lbl.text = ""
     return lbl
   }()
- 
+  
   private let salaryHeaderLabel: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Salary"
+    lbl.text = "Salary".Localized
     return lbl
   }()
   
@@ -123,13 +123,13 @@ class JobDetailVC: UIViewController {
     lbl.text = ""
     return lbl
   }()
- 
+  
   private let locationHeaderLabel: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Location"
+    lbl.text = "Location".Localized
     return lbl
   }()
   
@@ -148,7 +148,7 @@ class JobDetailVC: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Description For Job"
+    lbl.text = "Description For Job".Localized
     return lbl
   }()
   
@@ -164,7 +164,7 @@ class JobDetailVC: UIViewController {
   
   let applyButton: UIButton = {
     let btn = UIButton(type: .system)
-    btn.setupButton(with: "Apply Now!")
+    btn.setupButton(with: "Apply Now!".Localized)
     btn.addTarget(self, action: #selector(applyForAJobTapped), for: .touchUpInside)
     btn.isHidden = true
     return btn
@@ -196,7 +196,7 @@ class JobDetailVC: UIViewController {
     }
   }
   
-  
+  //FireStore
   private func isUserEmployer(completion: @escaping (_ isEmployer: String) -> ()){
     guard let user = Auth.auth().currentUser else {return}
     db.collection("Users").whereField("userID", isEqualTo: user.uid)
@@ -218,7 +218,7 @@ class JobDetailVC: UIViewController {
       }
   }
   
-  
+  //ScrollView
   private func setupScrollView(){
     scrollView.isScrollEnabled = true
     scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -267,7 +267,7 @@ class JobDetailVC: UIViewController {
     view.addSubview(applyButton)
     
     
-    
+    // elements constraints
     NSLayoutConstraint.activate([
       
       imageTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
@@ -355,7 +355,7 @@ class JobDetailVC: UIViewController {
   }
   
   
-  //MARK: - Data
+  //MARK: - FireStore
   
   @objc private func applyForAJobTapped() {
     
@@ -416,7 +416,7 @@ class JobDetailVC: UIViewController {
           if let currentUser = currentUser {
             completion(currentUser.name, currentUser.age, currentUser.experience, currentUser.email,  currentUser.degree)
           }else{
-            print("errrrrorrrorroro: \(currentUser)")
+            print("errrrrorrrorroro: \(String(describing: currentUser))")
           }
           
         }

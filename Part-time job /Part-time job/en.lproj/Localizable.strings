@@ -1,0 +1,117 @@
+/* 
+ Locailzable.strings
+ Part-time job
+ 
+ Created by ABRAR ALQARNI on 19/06/1443 AH.
+ 
+ */
+
+//OnboardingVC
+"Get Started" = "Get Started";
+"Next" = "Next";
+
+"Work in your free time" = "Work in your free time";
+"Choose the job opportunities that suit you anytime, anywhere." = "Choose the job opportunities that suit you anytime, anywhere.";
+
+"Add a job offer" = "Add a job offer";
+"You can search for employees of all experiences and skills." = "You can search for employees of all experiences and skills.";
+
+"Smart recruitment for flexible work" = "Smart recruitment for flexible work" ;
+
+
+"We connect employer with qualified employees on flexible work contracts" = "We connect employer with qualified employees on flexible work contracts";
+
+//LoginVC
+"Oops!" = "Oops!";
+"please make sure email and password are not empty." = "please make sure email and password are not empty.";
+"OK" = "OK";
+
+"you entered a wrong password" = "you entered a wrong password";
+"are sure you typed the email correctly?" = "are sure you typed the email correctly?";
+
+
+//CreatNewAccountVC
+"Add Job Offer" = "Add Job Offer";
+"Employee" = "Employee";
+"Employer" = "Employer";
+
+"Passwords don't Match" = "Passwords don't Match";
+
+"please make sure name, email, password and confirm password  are not empty." = "please make sure name, email, password and confirm password  are not empty.";
+
+"email Already in use" = "email Already in use";
+
+"are sure you typed the email correctly?" = "are sure you typed the email correctly?";
+
+"Your password is weak, please make sure it's strong." = "Your password is weak, please make sure it's strong.";
+
+
+//AddJobVC
+"Company Image" = "Company Image";
+
+"Company Name" = "Company Name";
+"Ex: RiyadhBank" = "Ex: RiyadhBank";
+
+"Job Title" = "Job Title";
+"Ex: iOS Engineer" = "Ex: iOS Engineer";
+
+"City" = "City";
+"Ex: Riyadh" = "Ex: Riyadh";
+
+"Duration" = "Duration";
+
+"Salary" = "Salary";
+"Ex: 10,000 SAR" = "Ex: 10,000 SAR";
+
+"Location" = "Location";
+"Ex: Street name, Road name" = "Ex: Street name, Road name";
+
+"Description For Job" = "Description For Job";
+
+"Add Offer Job" = "Add Offer Job";
+
+"Add Offer Job" = "Add Offer Job";
+
+
+//JobDetailVC
+"Company Image" = "Company Image";
+"Company Name" = "Company Name";
+"Job Title" = "Job Title";
+"City" = "City";
+"Duration" = "Duration";
+"Salary" = "Salary";
+"Location" = "Location";
+"Description For Job" = "Description For Job";
+"Apply Now!" = "Apply Now!";
+
+
+
+//ProfileForEmployer
+"Your Name: " = "Your Name: ";
+"Your Email: " = "Your Email: ";
+"Applicants: " = "Applicants: ";
+"Profile"  = "Profile";
+
+"Log out" = "Log out";
+"Your sure you want to log out?" = "Your sure you want to log out?";
+"LOG OUT" = "LOG OUT";
+
+"CANCEL" = "CANCEL";
+
+
+//ProfileForEmployee
+"Your Age: " = "Your Age: ";
+"Your Degree: " = "Your Degree: ";
+"Your Experience: " = "Your Experience: ";
+
+
+
+//EditEmployeeProfileVC
+"Ex: Abrar" = "Ex: Abrar";
+"Ex: Bachelor in Computer Engineering" = "Ex: Bachelor in Computer Engineering";
+"Ex: 26 years old" = "Ex: 26 years old";
+"Ex: 2~ years" = "Ex: 2~ years";
+"Edit" = "Edit";
+
+
+"DELETE OFFER" = "DELETE OFFER";

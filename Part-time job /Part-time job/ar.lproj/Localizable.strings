@@ -1,0 +1,119 @@
+/* 
+ Locailzable.strings
+ Part-time job
+ 
+ Created by ABRAR ALQARNI on 19/06/1443 AH.
+ 
+ */
+
+//OnboardingVC
+"Get Started" = "البدء";
+"Next" = "التالي";
+
+"Work in your free time" = "اعمل في وقت فراغك";
+"Choose the job opportunities that suit you anytime, anywhere." = "اختر فرص العمل التي تناسبك في أي وقت وفي أي مكان.";
+
+"Add a job offer" = "أضف عرض عمل ";
+"You can search for employees of all experiences and skills." = "يمكنك البحث عن موظفين من كافة الخبرات والمهارات. ";
+
+"Smart recruitment for flexible work" = "التوظيف الذكي للعمل المرن" ;
+"We connect employer with qualified employees on flexible work contracts" = "نربط صاحب العمل بالموظفين المؤهلين بعقود عمل مرنة";
+
+
+//LoginVC
+"Oops!" = "حدث خطأ!";
+"please make sure email and password are not empty." = "يرجى التأكد من أن البريد الإلكتروني وكلمة المرور ليسا فارغين.";
+"OK" = "موافق";
+
+"you entered a wrong password" = "أدخلت كلمة مرور خاطئة";
+"are sure you typed the email correctly?" = "هل أنت متأكد أنك كتبت البريد الإلكتروني بشكل صحيح؟";
+
+//CreatNewAccountVC
+"Add Job Offer" = "اضافة عرض وظيفي";
+"Employee" = "موظف";
+"Employer" = "صاحب عمل";
+
+"Passwords don't Match" = "كلمات المرور غير متطابقة";
+
+"please make sure name, email, password and confirm password  are not empty." = "يرجى التأكد من أن الاسم والبريد الإلكتروني وكلمة المرور وتأكيد كلمة المرور ليست فارغة.";
+
+"email Already in use" = "البريد الاليكتروني قيد الاستخدام";
+
+"are sure you typed the email correctly?" = "هل أنت متأكد أنك كتبت البريد الإلكتروني بشكل صحيح؟";
+
+"Your password is weak, please make sure it's strong." = "كلمة المرور الخاصة بك ضعيفة ، يرجى التأكد من أنها قوية.";
+
+
+
+
+//AddJobVC
+"Company Image" = "صورة الشركة";
+
+"Company Name" = "اسم الشركة";
+"Ex: RiyadhBank" = "مثال: بنك الراجحي";
+
+"Job Title" = "المسمى الوظيفي";
+"Ex: iOS Engineer" = "مهندس iOS";
+
+"City" = "المدينة";
+"Ex: Riyadh" = "مثال: الرياض";
+
+"Duration" = "المدة";
+"Ex: 1-Month or 1-Year" = "مثال: شهر واحد أو عام";
+
+"Salary" = "الراتب";
+"Ex: 10,000 SAR" = "مثال: 10،000 ريال سعودي";
+
+"Location" = "الموقع";
+"Ex: Street name, Road name" = "مثال: اسم الشارع ، اسم الطريق";
+
+"Description For Job" = "وصف الوظيفة";
+
+"Add Offer Job" = "إضافة عرض عمل";
+"Add Offer Job" = "إضافة عرض عمل";
+
+"Error" = "خطأ";
+"please fill out all the required fields" = "يرجى ملء جميع الحقول المطلوبة";
+"You need to add an image for the current job offer." = "أنت بحاجة إلى إضافة صورة لعرض العمل الحالي.";
+
+
+
+//JobDetailVC
+"Company Image" = "صورة الشركة";
+"Company Name" = "اسم الشركة";
+"Job Title" = "المسمى الوظيفي";
+"City" = "المدينة";
+"Duration" = "المدة";
+"Salary" = "الراتب";
+"Location" = "الموقع";
+"Description For Job" = "وصف الوظيفة";
+"Apply Now!" = "قدم الآن!";
+
+
+//ProfileForEmployer
+"Your Name: " = "اسمك:";
+"Your Email: " = "بريدك الإلكتروني: ";
+"Applicants: " = "المتقدمون: ";
+"Profile"  = "الملف الشخصي";
+
+"Log out" = "تسجيل الخروج";
+"Your sure you want to log out?" = "هل أنت متأكد أنك تريد تسجيل الخروج؟";
+"LOG OUT" = "تسجيل الخروج";
+
+"CANCEL" = "إلغاء";
+
+
+//ProfileForEmployee
+"Your Age: " = "عمرك: ";
+"Your Degree: " =  "الدرجة العلمية:";
+"Your Experience: " = "خبرتك: ";
+
+
+//EditEmployeeProfileVC
+"Ex: Abrar" = "مثال: أبرار";
+"Ex: Bachelor in Computer Engineering" = "مثال: بكالوريوس هندسة الكمبيوتر";
+"Ex: 26 years old" = "مثال: 26 عامًا";
+"Ex: 2~ years" = "مثال: سنتان";
+"Edit" = "تعديل";
+
+"DELETE OFFER" = "حذف العرض";

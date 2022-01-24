@@ -16,47 +16,57 @@ class EmployerProfileCell: UITableViewCell {
   //  MARK: - @IBOutlet
   let name: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
+    lbl.textColor = .jobText!
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     
     return lbl
   }()
+  
+  
   let email: UILabel = {
     let lbl = UILabel()
-    lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
-    lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-    lbl.translatesAutoresizingMaskIntoConstraints = false
-    return lbl
-  }()
-  let age: UILabel = {
-    let lbl = UILabel()
-    lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
-    lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-    lbl.translatesAutoresizingMaskIntoConstraints = false
-    return lbl
-  }()
-  let degree: UILabel = {
-    let lbl = UILabel()
-    lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
-    lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-    lbl.translatesAutoresizingMaskIntoConstraints = false
-    return lbl
-  }()
-  let experience: UILabel = {
-    let lbl = UILabel()
-    lbl.textColor = .jobActionColors!.withAlphaComponent(0.57)
+    lbl.textColor = .jobText!
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     lbl.translatesAutoresizingMaskIntoConstraints = false
     return lbl
   }()
   
-  //  MARK: -
+  
+  let age: UILabel = {
+    let lbl = UILabel()
+    lbl.textColor = .jobText!
+    lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+    lbl.translatesAutoresizingMaskIntoConstraints = false
+    return lbl
+  }()
+  
+  
+  let degree: UILabel = {
+    let lbl = UILabel()
+    lbl.textColor = .jobText!
+    lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+    lbl.translatesAutoresizingMaskIntoConstraints = false
+    return lbl
+  }()
+  
+  
+  let experience: UILabel = {
+    let lbl = UILabel()
+    lbl.textColor = .jobText!
+    lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+    lbl.translatesAutoresizingMaskIntoConstraints = false
+    return lbl
+  }()
+  
+  //  MARK: - Table Cell
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     setupViews()
   }
+  
+  
   //enable objects
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -79,6 +89,7 @@ class EmployerProfileCell: UITableViewCell {
     addSubview(degree)
     addSubview(experience)
     
+    // elements constraints
     NSLayoutConstraint.activate([
       
       name.topAnchor.constraint(equalTo: topAnchor, constant: 10),

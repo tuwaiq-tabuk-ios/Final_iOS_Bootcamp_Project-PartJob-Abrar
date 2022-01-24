@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class EditVC: UIViewController {
+class EditEmployeeProfileVC: UIViewController {
   
   //  MARK: - Properties
   private let db = Firestore.firestore()
@@ -19,65 +19,72 @@ class EditVC: UIViewController {
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Your name"
+    lbl.text = "Your Name: ".Localized
     return lbl
   }()
   
+  
   private let nameTF: UITextField = {
     let textField = UITextField()
-    textField.setupTextField(with: NSAttributedString(string: "Ex: Abrar",
+    textField.setupTextField(with: NSAttributedString(string: "Ex: Abrar".Localized,
                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.jobText!.withAlphaComponent(0.5)]))
     return textField
   }()
+  
   
   private let degreeHeader: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Your degree"
+    lbl.text = "Your Degree: ".Localized
     return lbl
   }()
+  
+  
   private let degreeTF: UITextField = {
     let textField = UITextField()
-    textField.setupTextField(with:  NSAttributedString(string: "Ex: Bachelor in Computer Engineering",
+    textField.setupTextField(with:  NSAttributedString(string: "Ex: Bachelor in Computer Engineering".Localized,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.jobText!.withAlphaComponent(0.5)]))
     return textField
   }()
+  
   
   private let ageHeader: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Your age"
+    lbl.text = "Your Age: ".Localized
     return lbl
   }()
   
+  
   private let ageTF: UITextField = {
     let textField = UITextField()
-    textField.setupTextField(with:  NSAttributedString(string: "Ex: 26 years old",
+    textField.setupTextField(with:  NSAttributedString(string: "Ex: 26 years old".Localized,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.jobText!.withAlphaComponent(0.5)]))
     return textField
   }()
+  
   
   private let experienceHeader: UILabel = {
     let lbl = UILabel()
     lbl.textColor = .jobActionColors
     lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
     lbl.translatesAutoresizingMaskIntoConstraints = false
-    lbl.text = "Your experience"
+    lbl.text = "Your Experience: ".Localized
     return lbl
   }()
   
   private let experienceTF: UITextField = {
     let textField = UITextField()
-    textField.setupTextField(with:  NSAttributedString(string: "Ex: 2~ years",
+    textField.setupTextField(with:  NSAttributedString(string: "Ex: 2~ years".Localized,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.jobText!.withAlphaComponent(0.5)]))
     return textField
   }()
   
-  ///Buttun
+
   
   private let done: UIButton = {
     let btn = UIButton(type: .system)
@@ -131,8 +138,8 @@ class EditVC: UIViewController {
     degreeTF.delegate = self
     ageTF.delegate = self
     
+    // elements constraints
     NSLayoutConstraint.activate([
-      
       
       done.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
       done.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
@@ -178,6 +185,7 @@ class EditVC: UIViewController {
     ])
   }
   
+  
   @objc private func doneTapped() {
     guard let user = Auth.auth().currentUser else {return}
     
@@ -188,8 +196,8 @@ class EditVC: UIViewController {
     else {return}
     
     if name.isEmpty || age.isEmpty || exp.isEmpty || degree.isEmpty || age.isEmpty {
-      let alert = UIAlertController(title: "Error", message: "please fill out all the required fields", preferredStyle: .alert)
-      alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+      let alert = UIAlertController(title: "Error".Localized, message: "please fill out all the required fields".Localized, preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "OK".Localized, style: .cancel, handler: nil))
       self.present(alert, animated: true, completion: nil)
     }else{
       self.db.collection("Users").document(user.uid).updateData([
@@ -203,8 +211,8 @@ class EditVC: UIViewController {
   }
 }
 
-
-extension EditVC: UITextFieldDelegate {
+//update object's
+extension EditEmployeeProfileVC: UITextFieldDelegate {
   func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
     nameTF.resignFirstResponder()
     ageTF.resignFirstResponder()

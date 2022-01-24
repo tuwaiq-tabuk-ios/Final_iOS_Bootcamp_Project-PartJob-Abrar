@@ -11,7 +11,7 @@ extension UITextField {
   open func setupTextField(with placeholder: NSAttributedString) {
     backgroundColor = .clear
     autocorrectionType = .no
-    layer.cornerRadius = 2
+    layer.cornerRadius = 15
     layer.borderWidth = 1.1
     layer.borderColor = UIColor(named: "offWhite")?.cgColor
     clipsToBounds = true
@@ -19,7 +19,7 @@ extension UITextField {
     leftViewMode = .always
     attributedPlaceholder = placeholder
     tintColor = .jobActionColors
-    textColor = .jobActionColors
+    textColor = .jobText
     translatesAutoresizingMaskIntoConstraints = false
   }
   

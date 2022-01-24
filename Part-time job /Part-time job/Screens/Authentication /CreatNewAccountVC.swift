@@ -14,7 +14,7 @@ class CreatNewAccountVC: UIViewController {
   //MARK: - Properties
   
   let db = Firestore.firestore()
-  let categorySegmentedControl = UISegmentedControl (items: ["Employee","Employer"])
+  let categorySegmentedControl = UISegmentedControl (items: ["Employee".Localized,"Employer".Localized])
   var categoryValue = "no"
   
   
@@ -34,6 +34,8 @@ class CreatNewAccountVC: UIViewController {
     confirmePasswordTF.isSecureTextEntry = true
     navigationController?.navigationBar.barTintColor = UIColor.jobActionColors
     setupUserInterface()
+    
+
     
   }
   
@@ -63,7 +65,7 @@ class CreatNewAccountVC: UIViewController {
     createNewUser()
   }
   
-  
+  //MARK: - Action Handlers
   @objc private func createNewUser() {
     guard let email = emailTF.text else {return}
     guard let password = passwordTF.text else {return}
@@ -74,20 +76,20 @@ class CreatNewAccountVC: UIViewController {
       if passwordTF.text == confirmePasswordTF.text {
         createNewUserUsing(email: email, password: password, name: name)
       } else{
-        let alert = UIAlertController(title: "Oops!", message: "Passwords don't Match", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        let alert = UIAlertController(title: "Oops!".Localized, message: "Passwords don't Match".Localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK".Localized, style: .cancel, handler: nil))
         present(alert, animated: true)
         
       }
     }
     else{
-      let alert = UIAlertController(title: "Oops!", message: "please make sure name, email, password and confirm password  are not empty.", preferredStyle: .alert)
-      alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+      let alert = UIAlertController(title: "Oops!".Localized, message: "please make sure name, email, password and confirm password  are not empty.".Localized, preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "OK".Localized, style: .cancel, handler: nil))
       present(alert, animated: true)
     }
   }
   
-  
+  //MARK: - FireStore
   func createNewUserUsing(email: String, password: String, name: String) {
     Auth.auth().createUser(withEmail: email, password: password) { results, error in
       
@@ -95,30 +97,30 @@ class CreatNewAccountVC: UIViewController {
         switch AuthErrorCode(rawValue: error.code) {
         case .emailAlreadyInUse:
           
-          let alert = UIAlertController(title: "Oops!", message: "email Already in use", preferredStyle: .alert)
-          alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+          let alert = UIAlertController(title: "Oops!".Localized, message: "email Already in use".Localized, preferredStyle: .alert)
+          alert.addAction(UIAlertAction(title: "OK".Localized, style: .cancel, handler: nil))
           self.present(alert, animated: true)
           
         case .invalidEmail:
           
-          let alert = UIAlertController(title: "Oops!", message: "are sure you typed the email correctly?", preferredStyle: .alert)
-          alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+          let alert = UIAlertController(title: "Oops!".Localized, message: "are sure you typed the email correctly?".Localized, preferredStyle: .alert)
+          alert.addAction(UIAlertAction(title: "OK".Localized, style: .cancel, handler: nil))
           self.present(alert, animated: true)
           
         case .weakPassword:
           
-          let alert = UIAlertController(title: "Oops!", message: "Your password is weak, please make sure it's strong.", preferredStyle: .alert)
-          alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+          let alert = UIAlertController(title: "Oops!".Localized, message: "Your password is weak, please make sure it's strong.".Localized, preferredStyle: .alert)
+          alert.addAction(UIAlertAction(title: "OK".Localized, style: .cancel, handler: nil))
           self.present(alert, animated: true)
           
         default:
           
-          let alert = UIAlertController(title: "Oops!", message: "\(error.localizedDescription)", preferredStyle: .alert)
-          alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+          let alert = UIAlertController(title: "Oops!".Localized, message: "\(error.localizedDescription)", preferredStyle: .alert)
+          alert.addAction(UIAlertAction(title: "OK".Localized, style: .cancel, handler: nil))
           self.present(alert, animated: true)
           
         }
-      }else{
+      } else{
         guard let user = results?.user else {return}
         
         self.db.collection("Users").document(user.uid).setData([
@@ -147,7 +149,7 @@ class CreatNewAccountVC: UIViewController {
     view.window?.makeKeyAndVisible()
     present(homeViewController, animated: true, completion: nil)
   }
-  
+  //Segmented Control
   @objc private func categoryValueChanged(_ sender: UISegmentedControl) {
     switch sender.selectedSegmentIndex {
     case 0:
@@ -159,7 +161,7 @@ class CreatNewAccountVC: UIViewController {
     }
   }
 }
-
+//update object's
 extension CreatNewAccountVC: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     nameTF.resignFirstResponder()

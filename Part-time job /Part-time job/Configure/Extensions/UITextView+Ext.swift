@@ -8,6 +8,7 @@
 import UIKit
 
 extension UITextView {
+  
   open func setupTextView() {
     backgroundColor = .clear
     autocorrectionType = .no
